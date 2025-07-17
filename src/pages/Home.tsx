@@ -34,13 +34,13 @@ function Home() {
           href="#"
           image="/3.png"
         />
-      </div>
+      </div>      
       <div className={`${styles.box} ${styles.box_3}`}>
+ 
         <ScrollSections />
       </div>
       <div className={`${styles.box} ${styles.box_4}`}><CubeBackgroundWrapper> <div style={{ color: 'white', padding: '5rem', textAlign: 'center', height:'100vh' }}>
-        <h1>Contenido encima del fondo</h1>
-        <p>Esto aparece sobre el cubo animado, pero con una "tela" que lo oculta parcialmente.</p>
+
       </div></CubeBackgroundWrapper></div>
     </section>
   );

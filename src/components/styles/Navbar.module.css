@@ -49,10 +49,10 @@
   position: relative;
   overflow: hidden;
   transition: .3s;
-  color: #fff;
+  color:orange;
 }
 .links li:hover {
-  color: #fff;
+  color: orange;
 }
 .links li:before {
   content: "";

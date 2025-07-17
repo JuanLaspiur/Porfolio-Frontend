@@ -1,22 +1,27 @@
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import styles from "./styles/ScrollSections.module.css";
+import BlogCard from "./common/BlogCard";
 
 const sections = [
   {
     title: "Level Up Your CSS.", 
     content: "Aprendé a dominar cada propiedad con precisión quirúrgica.",
+        image:"/perfil.jpg"
   },
   {
     title: "Dissect Problems.",
     content: "No hay desafío que no se pueda descomponer y resolver.",
+        image:"/3.png"
   },
   {
     title: "Learn New Techniques.",
     content: "Explorá nuevas herramientas y enfoques todos los días.",
+        image:"/2.png"
   },
   {
     title: "Profit.",
     content: "Aplicá tu conocimiento y hacelo valer.",
+    image:"/1.png"
   },
 ];
 
@@ -26,6 +31,7 @@ interface SectionProps {
   index: number;
   total: number;
   scrollYProgress: MotionValue<number>;
+  image:string
 }
 
 function SectionItem({
@@ -34,11 +40,12 @@ function SectionItem({
   index,
   total,
   scrollYProgress,
+  image
 }: SectionProps) {
-  const sectionSize = 1/total;
-  const start = (index * sectionSize)*2;
-  const end = ((index + 1) * sectionSize) *2;
-  const fadeInStart =start - sectionSize * 0.3 > 0 ? start - sectionSize * 0.3 : 0;
+  const sectionSize = 1/(total*2);
+  const start = (index * sectionSize)*1.5;
+  const end = ((index + 1) * sectionSize) *1.5;
+  const fadeInStart =start - sectionSize * 0.09 > 0 ? start - sectionSize * 0.09 : 0;
 
 
   const opacity = useTransform(
@@ -59,6 +66,16 @@ function SectionItem({
     >
       <h2>{title}</h2>
       <p>{content}</p>
+<BlogCard
+  title="Is Apple a Design Company?"
+  content="Apple is more than a tech company; it became a culture unto itself, a passion of most of people and the birthplace of the world’s most revolutionized products."
+  link="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
+  imageUrl= {image}
+/>
+
+
+
+
     </motion.section>
   );
 }
@@ -79,6 +96,7 @@ export default function ScrollSections() {
             scrollYProgress={scrollYProgress}
             title={section.title}
             content={section.content}
+            image={section.image}
           />
         ))}
       </div>

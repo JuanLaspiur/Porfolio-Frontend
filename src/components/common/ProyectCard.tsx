@@ -1,5 +1,5 @@
 import styles from './styles/ProyectCard.module.css';
-
+import { type Proyect } from '../../types/Proyect';
 function ProyectCard({
   title,
   category,
@@ -7,7 +7,7 @@ function ProyectCard({
   time,
   href,
   image
-}) {
+}:Proyect) {
   return (
     <article className={`${styles.card} ${styles.card1}`}>
       <div className={styles.card__infoHover}>
