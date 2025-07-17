@@ -30,11 +30,15 @@
   left: 0;
   object-fit: cover;
 }
-
+.preTittle{  
+  padding-left: 14px;
+  margin-top: 240px;
+  color: #fff;
+}
 .h1 {
   margin: auto;
   text-align: left;
-  margin-top: 250px;
+
   padding-left: 14px;
   font-size: 24px;
 }

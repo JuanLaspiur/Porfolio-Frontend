@@ -10,8 +10,10 @@ interface BlogCardProps {
 export default function BlogCard({ title, content, link, imageUrl }: BlogCardProps) {
   return (
     <div className={styles.container}>
+
       <div className={styles.square}>
         <img src={imageUrl} alt="Blog visual" className={styles.mask} />
+      <div className={styles.preTittle}>PRE - TITLE</div>
         <div className={styles.h1}>{title}</div>
         <p>{content}</p>
           </div>

@@ -21,15 +21,30 @@
 }
 
 .badge {
+  position: relative;
   display: inline-block;
-  background: #f3a600;
-  color: white;
+  color: rgb(43, 43, 43);
   font-weight: bold;
   font-size: 0.75rem;
   padding: 0.3rem 0.5rem;
   transform: rotate(-5deg);
   margin-bottom: 1rem;
+  z-index: 1;
 }
+
+.badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #f3a600;
+  border-radius: 0.2rem;
+  z-index: -1;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fadeInMark 1.2s ease-out 0.3s forwards;
+}
+
 
 h1 {
   font-size: 2rem;
@@ -62,3 +77,10 @@ button:hover {
   box-shadow: 0 0 50px #000;
 }
 
+
+@keyframes fadeInMark {
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}

@@ -4,6 +4,7 @@ import ProyectCard from "../components/common/ProyectCard";
 
 import styles from "./styles/Home.module.css";
 import CubeBackgroundWrapper from "../components/CubeBackgroundWrapper";
+import AnimatedIcon from "../components/common/AnimatedIcon";
 
 function Home() {
   return (
@@ -34,13 +35,13 @@ function Home() {
           href="#"
           image="/3.png"
         />
-      </div>      
+      </div>
       <div className={`${styles.box} ${styles.box_3}`}>
- 
+
         <ScrollSections />
       </div>
-      <div className={`${styles.box} ${styles.box_4}`}><CubeBackgroundWrapper> <div style={{ color: 'white', padding: '5rem', textAlign: 'center', height:'100vh' }}>
-
+      <div className={`${styles.box} ${styles.box_4}`}><CubeBackgroundWrapper> <div style={{ color: 'white', padding: '5rem', textAlign: 'center', height: '100vh' }}>
+        <AnimatedIcon />
       </div></CubeBackgroundWrapper></div>
     </section>
   );
