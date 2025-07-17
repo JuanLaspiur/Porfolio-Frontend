@@ -1,0 +1,79 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 32px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  height: 70px;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+
+.actions {
+  display: flex;
+  gap: 16px;
+}
+
+
+
+
+
+.links li {
+  padding: 0 .5em .45em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  color: #fff;
+}
+.links li:hover {
+  color: #fff;
+}
+.links li:before {
+  content: "";
+  position: absolute;
+  inset: calc(100% - 1px) 0 0 0; /* 3px = the thickness */
+  background: #F3A600; /* the color */
+  scale: 0 1;
+  transition: .5s, translate 0s .5s;
+}
+.links:hover li:before {
+  scale: 1;
+}
+.links li:hover:before {
+  translate: 0;
+  transition: .5s;
+}
+.links:hover li:has(~ li:hover):before {
+  translate: 100% 0;
+  transition: .2s .2s,scale 0s .4s;
+}
+li:hover ~ li:before {
+  translate: -100% 0;
+  transition: .2s .2s,scale 0s .4s;
+}

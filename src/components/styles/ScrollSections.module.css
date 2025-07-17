@@ -1,0 +1,39 @@
+.wrapper {
+  position: relative;
+  color: white;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70vh;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.section h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  text-align: center;
+}
