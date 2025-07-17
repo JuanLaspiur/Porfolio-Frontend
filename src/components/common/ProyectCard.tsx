@@ -36,7 +36,7 @@ function ProyectCard({
 
       <div className={styles.card__info}>
         <span className={styles.card__category}>{category}</span>
-        <h3 className={styles.card__title}>{title}</h3>
+        <div className={styles.card__title}>{title}</div>
         <span className={styles.card__by}>
           by <a href="#" className={styles.card__author}>{author}</a>
         </span>

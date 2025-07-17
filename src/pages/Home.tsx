@@ -13,7 +13,7 @@ function Home() {
         <ProyectCard
           title="Blog María"
           category="React - Node"
-          author="Celeste Mills"
+          author="Juan Laspiur"
           time="15 min"
           href="#"
           image="/1.png"
@@ -21,7 +21,7 @@ function Home() {
         <ProyectCard
           title="Spartus Landing Page"
           category="React - Java"
-          author="Celeste Mills"
+          author="Juan Laspiur"
           time="15 min"
           href="#"
           image="/2.png"
@@ -29,7 +29,7 @@ function Home() {
         <ProyectCard
           title="Cooperar Mobile App"
           category="Expo - Java"
-          author="Celeste Mills"
+          author="Juan Laspiur"
           time="15 min"
           href="#"
           image="/3.png"

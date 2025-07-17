@@ -46,7 +46,7 @@
   background-color: #433f3f;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  padding: 16px 24px 24px 24px;
+  padding: 45px 24px 24px 24px;
   color:#fff
 }
 
@@ -61,7 +61,7 @@
 .card__title {
   margin-top: 5px;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-size: 22px;
 }
 
 .card__by {
