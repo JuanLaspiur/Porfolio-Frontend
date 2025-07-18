@@ -47,8 +47,31 @@
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   padding: 45px 24px 24px 24px;
-  color:#fff
+  color:#fff;
 }
+.card__info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #f3a600, transparent);
+  opacity: 0;
+  animation: lineaLateral 1s ease-out forwards;
+  border-radius: 2px;
+}
+@keyframes lineaLateral {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
 
 .card__category {
   text-transform: uppercase;
@@ -82,6 +105,7 @@
   opacity: 0;
   top: 0;
   transition: opacity 0.2s ease-in-out;
+ 
 }
 
 .card__like {
@@ -113,6 +137,7 @@
 .card:hover .card__info {
   background-color: transparent;
   position: relative;
+   color: #f3a600;
 }
 
 .card:hover .card__infoHover {
