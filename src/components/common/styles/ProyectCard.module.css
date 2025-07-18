@@ -56,7 +56,7 @@
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(to bottom, #f3a600, transparent);
+  background: linear-gradient(to bottom, #757303ad, transparent);
   opacity: 0;
   animation: lineaLateral 1s ease-out forwards;
   border-radius: 2px;

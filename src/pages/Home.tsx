@@ -3,8 +3,7 @@ import HeroSection from "../components/HeroSection";
 import ProyectCard from "../components/common/ProyectCard";
 
 import styles from "./styles/Home.module.css";
-import CubeBackgroundWrapper from "../components/CubeBackgroundWrapper";
-import AnimatedIcon from "../components/common/AnimatedIcon";
+import SkillSection from "../components/SkillSection";
 
 function Home() {
   return (
@@ -40,9 +39,13 @@ function Home() {
 
         <ScrollSections />
       </div>
-      <div className={`${styles.box} ${styles.box_4}`}><CubeBackgroundWrapper> <div style={{ color: 'white', padding: '5rem', textAlign: 'center', height: '100vh' }}>
-        <AnimatedIcon />
-      </div></CubeBackgroundWrapper></div>
+      <div className={`${styles.box} ${styles.box_4}`}> 
+        
+      <SkillSection/>  
+ 
+
+      </div>
+         <div className={`${styles.box} ${styles.box_5}`}></div>
     </section>
   );
 }

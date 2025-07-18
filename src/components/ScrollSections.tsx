@@ -1,27 +1,32 @@
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import styles from "./styles/ScrollSections.module.css";
 import BlogCard from "./common/BlogCard";
+import ImgIcon from "./common/icons/ImgIcon";
 
 const sections = [
   {
     title: "Level Up Your CSS.", 
     content: "Aprendé a dominar cada propiedad con precisión quirúrgica.",
-        image:"/perfil.jpg"
+    image:"/perfil.jpg",
+    iconTitle:"/nube.gif"
   },
   {
     title: "Dissect Problems.",
     content: "No hay desafío que no se pueda descomponer y resolver.",
-        image:"/3.png"
+     image:"/3.png", 
+    iconTitle:"/nube.gif"
   },
   {
     title: "Learn New Techniques.",
     content: "Explorá nuevas herramientas y enfoques todos los días.",
-        image:"/2.png"
+     image:"/2.png",
+        iconTitle:"/git.webp"
   },
   {
     title: "Profit.",
     content: "Aplicá tu conocimiento y hacelo valer.",
-    image:"/1.png"
+    image:"/1.png",
+     iconTitle:"/nube.gif"
   },
 ];
 
@@ -31,7 +36,8 @@ interface SectionProps {
   index: number;
   total: number;
   scrollYProgress: MotionValue<number>;
-  image:string
+  image:string;
+  imgSrc:string;
 }
 
 function SectionItem({
@@ -40,7 +46,8 @@ function SectionItem({
   index,
   total,
   scrollYProgress,
-  image
+  image,
+  imgSrc
 }: SectionProps) {
   const sectionSize = 1/(total*2);
   const start = (index * sectionSize)*1.5;
@@ -64,7 +71,7 @@ function SectionItem({
       className={styles.section}
       style={{ opacity, y }}
     >
-      <h2>{title}</h2>
+      <div className={styles.sections_h2}><ImgIcon imgSrc={imgSrc}/>{title}</div>
       <p>{content}</p>
 <BlogCard
   title="Is Apple a Design Company?"
@@ -97,11 +104,10 @@ export default function ScrollSections() {
             title={section.title}
             content={section.content}
             image={section.image}
+            imgSrc={section.iconTitle}
           />
         ))}
       </div>
-      {/* Espaciador para permitir scroll */}
-      <div style={{ height: '300vh' }} />
-    </div>
+        </div>
   );
 }
