@@ -1,4 +1,3 @@
-import { BiShieldAlt2 } from 'react-icons/bi'
 import SecurityCard from './common/SecurityCard'
 import styles from './styles/SkillSection.module.css'
 import CubeBackgroundWrapper from './CubeBackgroundWrapper'

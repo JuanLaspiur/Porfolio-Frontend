@@ -1,64 +1,26 @@
-.superBox {
-  width: 220px;
-  height: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
+
+/* Tamaños responsivos */
+.size_sm {
+  --card-size: 160px;
+  --icon-size: 40px;
+    --title-top:0
 }
 
-.container {
-  width: 220px;
-  height: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.size_md {
+  --card-size: 220px;
+  --icon-size: 60px;
+    --title-top:-12px
 }
 
-.box {
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 3px;
-  overflow: hidden;
-  transition: box-shadow ease 1s;
-  top:0
-}
-
-.icon_bg {
-  width: 80px;
-  height: 80px;
-  border-radius: 100%;
-  border: 1px solid rgba(225, 227, 232, 0.18);
-  box-shadow: 0 3px 4px 0 rgba(44, 71, 146, 0.25);
-  background-color: #ffffff6b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.6s ease;
-  transition-delay: 0.32s;
-  will-change: transform;
-
-}
-
-.icon {
-  position: relative;
-  margin-top: 45px;
-  transition: all 0.6s ease;
-  transition-delay: 0.32s;
-  will-change: transform;
-  width: 60px;
-  height: 60px;
+.size_lg {
+  --card-size: 280px;
+  --icon-size: 80px;
+    --title-top:-14px
 }
 
 .text {
   position: relative;
-  top: -12px;
+  top: var(--title-top);
   width: 200px;
   text-align: center;
   transition: all 0.4s ease;
@@ -73,7 +35,7 @@
 .description {
   position: absolute;
   width: 170px;
-  top: 111px;
+  top: calc(var(--card-size)/2);
   opacity: 0;
   font-size: 13px;
   color: #fff;
@@ -89,11 +51,11 @@
 }
 
 .superBox:hover .icon_bg {
- transform: translateY(-32px) scale(6);
+ transform: translateY(-14.55%) scale(6);
 }
 
 .superBox:hover .icon {
-  transform: translateY(-48px) scale(1.4);
+  transform: translateY(-81%) scale(1.4);
 }
 
 .superBox:hover .text {
@@ -114,4 +76,63 @@
 
 .drUrl {
   display: inline-block;
+}
+
+
+/* Ajustar tamaños existentes con variables */
+.superBox {
+  width: var(--card-size);
+  height: var(--card-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.container {
+  width: var(--card-size);
+  height: var(--card-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  position: absolute;
+  width: var(--card-size);
+  height: var(--card-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: box-shadow ease 1s;
+  top: 0;
+}
+
+.icon_bg {
+  width: calc(var(--icon-size) + 20px);
+  height: calc(var(--icon-size) + 20px);
+  border-radius: 100%;
+  border: 1px solid rgba(225, 227, 232, 0.18);
+  box-shadow: 0 3px 4px 0 rgba(44, 71, 146, 0.25);
+  background-color: #ffffff6b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease;
+  transition-delay: 0.32s;
+  will-change: transform;
+}
+
+.icon {
+  position: relative;
+  margin-top: 45px;
+  transition: all 0.6s ease;
+  transition-delay: 0.32s;
+  will-change: transform;
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
