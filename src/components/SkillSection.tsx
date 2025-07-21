@@ -2,11 +2,13 @@ import { BiShieldAlt2 } from 'react-icons/bi'
 import SecurityCard from './common/SecurityCard'
 import styles from './styles/SkillSection.module.css'
 import CubeBackgroundWrapper from './CubeBackgroundWrapper'
+import MarkedLabelProps from '../components/common/MarkedLabel'
 
 function SkillSection() {
     return (<CubeBackgroundWrapper>
-        <div className={styles.skillContainer}>
-            <div>
+        <div className={styles.containerAll}>
+            <MarkedLabelProps fontSize='2rem' text='Principal Skill' />
+            <div className={styles.containerCardSkill} >
 
             <SecurityCard
                 icon={<BiShieldAlt2 size={42} color="#f3a600" />}

@@ -1,8 +1,25 @@
-.skillContainer{
-    margin-top: 20px;
-    padding: 13vh 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+.containerAll {
+  margin-top: 20px;
+  padding: 13vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.containerCardSkill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.containerCardSkill:hover {
+  box-shadow: 0 12px 40px rgba(255, 165, 0, 0.2);
 }
