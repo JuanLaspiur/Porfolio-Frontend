@@ -52,6 +52,8 @@
   transition: all 0.6s ease;
   transition-delay: 0.32s;
   will-change: transform;
+  width: 60px;
+  height: 60px;
 }
 
 .text {
