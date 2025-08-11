@@ -2,7 +2,7 @@ import styles from './styles/SecondarySkill.module.css'
 import MarkedLabelProps from '../components/common/MarkedLabel'
 import SecurityCard from './common/SecurityCard'
 import awsIconSvg from '/svg/aws.svg'
-import dockerIconSvg from '/svg/docker.svg'
+import nextIconSvg from '/svg/next.svg'
 function SecondarySkill() {
   return (
     <div className={styles.containerAll}>
@@ -16,9 +16,9 @@ function SecondarySkill() {
         />
 
         <SecurityCard
-          icon={dockerIconSvg}
-          title="Docker"
-            description="Contenerización y despliegue eficiente de aplicaciones."
+          icon={nextIconSvg}
+          title="Next.js"
+            description="Next.js"
           size="sm"
         />
       </div>

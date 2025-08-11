@@ -1,0 +1,43 @@
+.wrapper {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.toggleButton {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.toggleButton:hover {
+  background: white;
+  color: black;
+}
+
+.console {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  padding: 0 20px; /* padding lateral inicial */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  text-align: left;
+
+  /* transición suave */
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+}
+
+.console.open {
+  padding: 20px;
+  max-height: 1000px; /* valor alto para permitir expansión */
+  opacity: 1;
+}

@@ -8,6 +8,7 @@ import CubeBackgroundWrapper from "../components/CubeBackgroundWrapper";
 import DevOpsSkill from "../components/DevOpsSkill";
 import CardProfile from "../components/CardProfile";
 import SecondarySkill from "../components/SecondarySkill";
+import DeveloperConsole from "../components/DeveloperConsole";
 
 function Home() {
   return (
@@ -48,10 +49,14 @@ function Home() {
           <SkillSection />
           <DevOpsSkill />
         </div>
-      </CubeBackgroundWrapper>
+      </CubeBackgroundWrapper> 
+      
+         
+        <DeveloperConsole/>
       <div className={`${styles.box} ${styles.box_5}`}>
         <CardProfile/>
       </div>
+
     </section>
   );
 }
