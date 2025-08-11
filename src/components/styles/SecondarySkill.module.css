@@ -1,10 +1,17 @@
 .containerAll {
   margin-top: -35px;
-  padding: 13vh 0;
+  padding: 13vh ;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
   height:100%;
+}
+
+.containerCardSkill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
