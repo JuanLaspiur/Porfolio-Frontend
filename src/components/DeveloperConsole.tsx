@@ -1,8 +1,10 @@
-import { useState } from "react";
 import styles from "./styles/DeveloperConsole.module.css";
 
-export default function DeveloperConsole() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function DeveloperConsole({ isOpen, setIsOpen }) {
+
+  if (!isOpen) {
+    return null
+  }
 
   const developer = {
     name: "Juan Laspiur",
@@ -32,16 +34,9 @@ export default function DeveloperConsole() {
     additionalKnowledge: ["Next.js", "Java", "SQL"],
     passion: "Building scalable web & mobile apps 🚀"
   };
-
+{/* Que haya un timer pasado los 10 segundos se cierre automaticamente con setIsOpen(false) */}
   return (
     <div className={styles.wrapper}>
-      <button
-        className={styles.toggleButton}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? "Cerrar consola" : "Ver más"}
-      </button>
-
       <div className={`${styles.console} ${isOpen ? styles.open : ""}`}>
         <pre>{JSON.stringify(developer, null, 2)}</pre>
       </div>

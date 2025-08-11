@@ -1,0 +1,60 @@
+.cardContainer {
+  perspective: 50em;
+}
+
+/* Fondos distintos */
+.bg1 {
+  --bi: repeating-linear-gradient(30deg, #111 0 0.25em, #333 0 1em);
+}
+
+.bg2 {
+  --bi: linear-gradient(#555 5em, #0000 3em),
+         linear-gradient(60deg, #880E4F, #1A237E);
+}
+
+.card {
+  position: relative;
+  width: 320px;
+  padding: 3em;
+  color: #fff;
+  transform: rotateY(30deg) rotateX(15deg);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:hover {
+  transform: rotateY(-30deg) rotateX(-15deg);
+}
+
+.layers {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.layer {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-radius: 1em;
+  background-image: var(--bi);
+  box-shadow: 0 0 0.5em #000d inset;
+}
+
+.layer:last-child {
+  box-shadow: 0 0 0.5em #000d inset, 0 0 5px #000;
+}
+
+/* Profundidad para cada capa */
+.layer:nth-child(1) { transform: translateZ(0px); }
+.layer:nth-child(2) { transform: translateZ(-4px); }
+.layer:nth-child(3) { transform: translateZ(-8px); }
+.layer:nth-child(4) { transform: translateZ(-12px); }
+.layer:nth-child(5) { transform: translateZ(-16px); }
+.layer:nth-child(6) { transform: translateZ(-20px); }
+.layer:nth-child(7) { transform: translateZ(-24px); }
+.layer:nth-child(8) { transform: translateZ(-28px); }
+.layer:nth-child(9) { transform: translateZ(-32px); }
+.layer:nth-child(10) { transform: translateZ(-36px); }

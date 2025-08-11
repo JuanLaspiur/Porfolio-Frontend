@@ -1,9 +1,11 @@
 import styles from "./styles/CardProfile.module.css";
-
+import MarkedLabelProps from '../components/common/MarkedLabel'
 
 export default function ProfileCard() {
   return (
     <div className={styles.wrapper}>
+      <MarkedLabelProps fontSize='2rem' text='About me' />
+
       <div className={styles.cardContainer}>
         <span className={styles.pro}>Developer</span>
         <img
@@ -11,10 +13,10 @@ export default function ProfileCard() {
           src="/perfil.jpg"
           alt="user"
         />
-        <h3>Ricky Park</h3>
-        <h6>New York</h6>
+        <h3>Juan Laspiur</h3>
+        <h6>Bahía Blanca</h6>
         <p>
-          User interface designer and <br /> front-end developer
+         Full Stack  developer
         </p>
         <div className={styles.buttons}>
           <button className={styles.primary}>Message</button>
@@ -22,7 +24,7 @@ export default function ProfileCard() {
             Following
           </button>
         </div>
-     
+
       </div>
     </div>
   );

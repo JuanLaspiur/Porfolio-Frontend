@@ -5,13 +5,15 @@ interface SecurityCardProps {
   title: string;
   description: string;
   size?: 'sm' | 'md' | 'lg';
+    onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-const SecurityCard = ({ icon, title, description, size = 'md' }: SecurityCardProps) => {
+const SecurityCard = ({ icon, title, description, size = 'md', onMouseEnter, onMouseLeave }: SecurityCardProps) => {
   const sizeClass = styles[`size_${size}`] || '';
 
   return (
-    <div className={`${styles.superBox} ${sizeClass}`}>
+    <div className={`${styles.superBox} ${sizeClass}`} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <div className={styles.container}>
         <div className={styles.box}>
           <div className={styles.icon_bg}></div>

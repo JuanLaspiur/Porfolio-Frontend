@@ -9,8 +9,12 @@ import DevOpsSkill from "../components/DevOpsSkill";
 import CardProfile from "../components/CardProfile";
 import SecondarySkill from "../components/SecondarySkill";
 import DeveloperConsole from "../components/DeveloperConsole";
+import FilmCard from "../components/FilmCard";
+import { useState } from "react";
 
 function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [hoverSkill, setHoverSkill] = useState(null);
   return (
     <section className={styles.homeContainer}>
       <div className={`${styles.box} ${styles.box_1}`}><HeroSection /></div>
@@ -45,18 +49,20 @@ function Home() {
         <ScrollSections />
       </div><CubeBackgroundWrapper>
         <div className={`${styles.box} ${styles.box_4}`}>
-          <SecondarySkill/>
-          <SkillSection />
+          <SecondarySkill />
+          <SkillSection setHoverSkill={setHoverSkill} />
           <DevOpsSkill />
         </div>
-      </CubeBackgroundWrapper> 
-      
-         
-        <DeveloperConsole/>
-      <div className={`${styles.box} ${styles.box_5}`}>
-        <CardProfile/>
-      </div>
+      </CubeBackgroundWrapper>
+      <FilmCard hoverSkill={hoverSkill} background="https://iamjoshellis-codepen.s3.amazonaws.com/damon-small.jpg" onClick={() => setIsOpen(!isOpen)}>
+        <span style={{ textTransform: "uppercase" }}  >{!isOpen ? "Ver más" : "Cerrar Consola"}</span>
+      </FilmCard>
 
+      <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} />
+      <div className={`${styles.box} ${styles.box_5}`}>
+
+
+      </div>
     </section>
   );
 }

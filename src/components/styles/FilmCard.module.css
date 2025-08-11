@@ -1,0 +1,159 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+/* Imagen desenfocada detrás */
+.backgroundImage {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  filter: blur(10px);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: 0.3s ease-out;
+  opacity: 0.3;
+}
+
+
+.item {
+  position: relative;
+  z-index: 2;
+  margin: 15px;
+  transition: transform 0.3s ease-out;
+}
+
+.bg {
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.25);
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  clip-path: polygon(
+    20px 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    20px 100%,
+    0 calc(100% - 20px),
+    0 20px
+  );
+  transition: transform 0.3s ease-out;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease-out;
+}
+
+.content {
+  z-index: 100;
+  width: 50%;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  background: #f3a600;
+  padding: 0.5em;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-out;
+  text-align: center;
+}
+
+.cornerContainer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  transition: all 0.4s ease-in;
+}
+
+.corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+}
+
+.top {
+  border-bottom: none;
+  top: 0;
+}
+
+.bottom {
+  border-top: none;
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+  border-right: none;
+}
+
+.right {
+  right: 0;
+  border-left: none;
+}
+
+/* Hover animaciones */
+.item:hover {
+  transform: scale(1.05);
+}
+
+.item:hover .bg::after {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item:hover .content {
+  transform: scale(1.1);
+}
+
+.item:hover .corner {
+  opacity: 1;
+}
+
+.item:hover .top.left {
+  transform: translate(-50%, -50%) scale(4);
+}
+
+.item:hover .top.right {
+  transform: translate(50%, -50%) scale(4);
+}
+
+.item:hover .bottom.left {
+  transform: translate(-50%, 50%) scale(4);
+}
+
+.item:hover .bottom.right {
+  transform: translate(50%, 50%) scale(4);
+}
+
+.item:hover .cornerContainer {
+  transform: rotate(210deg) scale(0.5);
+}
+
+.item:hover + .backgroundImage {
+  transform: scale(1.1);
+  filter: blur(3px);
+  will-change: transform, filter;
+  opacity:0.6;
+}
