@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+ width: max-content;
+  height:100%;
 }
 
 .containerCardSkill {
@@ -12,7 +14,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.03);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
@@ -20,6 +22,3 @@
   transition: all 0.3s ease-in-out;
 }
 
-.containerCardSkill:hover {
-  box-shadow: 0 12px 40px rgba(255, 165, 0, 0.2);
-}
