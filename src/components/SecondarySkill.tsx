@@ -3,12 +3,12 @@ import MarkedLabelProps from '../components/common/MarkedLabel'
 import SecurityCard from './common/SecurityCard'
 import awsIconSvg from '/svg/aws.svg'
 import linuxIconSvg from '/svg/linux.svg'
-import mySqlIconSvg from '/svg/mysql.svg'
+import dockerIconSvg from '/svg/docker.svg'
 
 function SecondarySkill() {
   return (
     <div className={styles.containerAll}>
-      <MarkedLabelProps fontSize='1.2rem' text='Secondary Skill' />
+      <MarkedLabelProps fontSize='1.2rem' text='DevOps Skill' />
       <div className={styles.containerCardSkill}>
         <SecurityCard
           icon={awsIconSvg}
@@ -23,9 +23,9 @@ function SecondarySkill() {
           size="sm"
         />
         <SecurityCard
-          icon={mySqlIconSvg}
-          title="SQL"
-          description="Gestión y optimización de bases de datos relacionales."
+          icon={dockerIconSvg}
+          title="Docker"
+            description="Contenerización y despliegue eficiente de aplicaciones."
           size="sm"
         />
       </div>

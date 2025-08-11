@@ -6,6 +6,7 @@ import styles from "./styles/Home.module.css";
 import SkillSection from "../components/SkillSection";
 import CubeBackgroundWrapper from "../components/CubeBackgroundWrapper";
 import SecondarySkill from "../components/SecondarySkill";
+import CardProfile from "../components/CardProfile";
 
 function Home() {
   return (
@@ -46,7 +47,9 @@ function Home() {
           <SecondarySkill />
         </div>
       </CubeBackgroundWrapper>
-      <div className={`${styles.box} ${styles.box_5}`}></div>
+      <div className={`${styles.box} ${styles.box_5}`}>
+        <CardProfile/>
+      </div>
     </section>
   );
 }
