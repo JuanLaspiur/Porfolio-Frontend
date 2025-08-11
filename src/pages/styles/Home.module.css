@@ -18,3 +18,10 @@
     gap: 25px;
     margin: 10vh 0;
 }
+
+.box_4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}

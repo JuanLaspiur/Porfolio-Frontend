@@ -4,6 +4,8 @@ import ProyectCard from "../components/common/ProyectCard";
 
 import styles from "./styles/Home.module.css";
 import SkillSection from "../components/SkillSection";
+import SecondarySkillSection from "../components/SecondarySkillSection";
+import CubeBackgroundWrapper from "../components/CubeBackgroundWrapper";
 
 function Home() {
   return (
@@ -38,14 +40,14 @@ function Home() {
       <div className={`${styles.box} ${styles.box_3}`}>
 
         <ScrollSections />
-      </div>
-      <div className={`${styles.box} ${styles.box_4}`}> 
-        
-      <SkillSection/>  
- 
+      </div><CubeBackgroundWrapper>
+        <div className={`${styles.box} ${styles.box_4}`}>
 
-      </div>
-         <div className={`${styles.box} ${styles.box_5}`}></div>
+          <SkillSection />
+          <SecondarySkillSection />
+        </div>
+        </CubeBackgroundWrapper>
+      <div className={`${styles.box} ${styles.box_5}`}></div>
     </section>
   );
 }

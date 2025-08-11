@@ -89,7 +89,6 @@ function SectionItem({
 
 export default function ScrollSections() {
   const { scrollYProgress } = useScroll();
-  console.log('scrollYProgress ', scrollYProgress)
 
   return (
     <div className={styles.wrapper}>
