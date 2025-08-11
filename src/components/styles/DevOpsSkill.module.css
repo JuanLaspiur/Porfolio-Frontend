@@ -23,6 +23,7 @@
 }
 */ 
 .containerAll {
+  /* margin-top: -35px; */
   padding: 13vh 0;
   display: flex;
   align-items: center;
@@ -37,15 +38,12 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background: rgba(255, 255, 255, 0.03);
+        background: rgba(255, 255, 255, 0.03);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  
-  /* Borde en todos lados */
   border: 1px solid rgba(255, 255, 255, 0.1);
-  /* Quitar borde derecho */
-  border-right: none;
-  
+    border-left: none;
   transition: all 0.3s ease-in-out;
+
 }

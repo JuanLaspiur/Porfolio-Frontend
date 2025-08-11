@@ -13,15 +13,15 @@ function SkillSection() {
                 <SecurityCard
                     icon={javaIconSvg}
                     title="Java"
-                    description="Mi primer lenguaje de programación, mi favorito. Conocimiento en JPA (hibernate) y Spring"
+                    description="Mi primer lenguaje de programación."
                 />          <SecurityCard
                     icon={nodeIconSvg}
                     title="Node.js"
-                    description="Entorno de Ejecución de JavaScript, el lenguaje con el que más he trabajado. Me interesa JavaScript por su versatilidad Back Front. "
+                    description="El que más he utilizado. Versatil y potente."
                 />          <SecurityCard
                     icon={reactIconSvg}
                     title="React.js"
-                    description="Libreria para crear interfaces de usuario rápidas, reutilizables y dinámicas de forma eficiente."
+                    description="Interfaces de usuario rápidas, reutilizables y dinámicas."
                 /></div>
         </div>
     )

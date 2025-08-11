@@ -1,24 +1,24 @@
-import styles from './styles/SecondarySkill.module.css'
+import styles from './styles/DevOpsSkill.module.css'
 import MarkedLabelProps from '../components/common/MarkedLabel'
 import SecurityCard from './common/SecurityCard'
-import awsIconSvg from '/svg/aws.svg'
+import linuxIconSvg from '/svg/linux.svg'
 import dockerIconSvg from '/svg/docker.svg'
-function SecondarySkill() {
+
+function DevOpsSkill() {
   return (
     <div className={styles.containerAll}>
-      <MarkedLabelProps fontSize='1.2rem' text='Secondary Skill' />
+      <MarkedLabelProps fontSize='1.2rem' text='DevOps Skill' />
       <div className={styles.containerCardSkill}>
         <SecurityCard
-          icon={awsIconSvg}
-          title="AWS"
-          description="AWS"
+          icon={linuxIconSvg}
+          title="Linux"
+          description="Linux"
           size="sm"
         />
-
         <SecurityCard
           icon={dockerIconSvg}
           title="Docker"
-            description="Contenerización y despliegue eficiente de aplicaciones."
+            description="Docker"
           size="sm"
         />
       </div>
@@ -26,4 +26,4 @@ function SecondarySkill() {
   )
 }
 
-export default SecondarySkill
+export default DevOpsSkill

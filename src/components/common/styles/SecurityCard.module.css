@@ -1,15 +1,15 @@
 
 /* Tamaños responsivos */
 .size_sm {
-  --card-size: 160px;
-  --icon-size: 40px;
-    --title-top:0
+  --card-size: 97px;
+  --icon-size: 25px;
+    --title-top:7px
 }
 
 .size_md {
-  --card-size: 220px;
-  --icon-size: 60px;
-    --title-top:-12px
+  --card-size: 140px;
+  --icon-size: 40px;
+    --title-top:7px
 }
 
 .size_lg {
@@ -34,7 +34,7 @@
 
 .description {
   position: absolute;
-  width: 170px;
+  width: 100%;
   top: calc(var(--card-size)/2);
   opacity: 0;
   font-size: 13px;
@@ -48,6 +48,7 @@
 .superBox:hover .box {
   box-shadow: 0 3px 4px 0 rgba(44, 71, 146, 0.25);
   transition-delay: 0.32s;
+
 }
 
 .superBox:hover .icon_bg {
