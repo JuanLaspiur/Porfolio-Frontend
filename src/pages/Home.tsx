@@ -6,11 +6,13 @@ import styles from "./styles/Home.module.css";
 import SkillSection from "../components/SkillSection";
 import CubeBackgroundWrapper from "../components/CubeBackgroundWrapper";
 import DevOpsSkill from "../components/DevOpsSkill";
-import CardProfile from "../components/CardProfile";
 import SecondarySkill from "../components/SecondarySkill";
 import DeveloperConsole from "../components/DeveloperConsole";
 import FilmCard from "../components/FilmCard";
 import { useState } from "react";
+import ExperienceTimeline from "../components/ExperienceTimeline";
+import AboutMe from "../components/AboutMe";
+import Footer from "../components/Footer";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,9 +62,10 @@ function Home() {
 
       <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className={`${styles.box} ${styles.box_5}`}>
-
-
+        <ExperienceTimeline />
       </div>
+      <AboutMe/>
+      <Footer/>
     </section>
   );
 }

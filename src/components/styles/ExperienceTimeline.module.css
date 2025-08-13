@@ -1,0 +1,100 @@
+.timelineSection {
+  padding: 4rem 2rem;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffa500;
+  margin-bottom: 3rem;
+}
+
+.timeline {
+  position: relative;
+  margin: auto;
+  max-width: 800px;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #ffa500;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  padding: 1rem;
+  position: relative;
+  width: 50%;
+}
+
+.timelineItem:nth-child(odd) {
+  left: 0;
+}
+
+.timelineItem:nth-child(even) {
+  left: 50%;
+}
+
+.content {
+  background: #433f3f;
+  padding: 1.5rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.timelineItem:nth-child(odd) .content {
+  margin-right: auto;
+}
+
+.timelineItem:nth-child(even) .content {
+  margin-left: auto;
+}
+
+.year {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ffa500;
+}
+
+.role {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.company {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* Animación de aparición */
+.timelineItem {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.timelineItem:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+.timelineItem:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
