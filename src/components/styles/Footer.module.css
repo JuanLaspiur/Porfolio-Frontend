@@ -1,7 +1,7 @@
 .footer {
   color: white;
   padding: 2rem 1rem 1rem;
-  border-top: 2px solid #b3b0acb4;
+  background-color: #353333;
 }
 
 .container {
@@ -15,9 +15,13 @@
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffa500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  height: 70px;
 }
 
 .nav {

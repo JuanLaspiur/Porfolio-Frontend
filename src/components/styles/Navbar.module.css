@@ -77,3 +77,15 @@ li:hover ~ li:before {
   translate: -100% 0;
   transition: .2s .2s,scale 0s .4s;
 }
+
+.links li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 .5em .45em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  color: gray;
+}

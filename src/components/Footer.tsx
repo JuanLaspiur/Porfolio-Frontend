@@ -5,7 +5,9 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.logo}>JL</div>
+  <div className={styles.logo}>
+        <img src="/logo.png" alt="Logo" />
+      </div>
 
         <div className={styles.social}>
           <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">
