@@ -6,6 +6,7 @@
   flex-direction: column;
  width: max-content;
   height:100%;
+  
 }
 
 .containerCardSkill {
@@ -19,5 +20,12 @@
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease-in-out;
+     pointer-events: none; /* No clickeable mientras está oculto */
+        clip-path: polygon(
+    10px 0%, calc(100% - 10px) 0%,
+    100% 10px, 100% calc(100% - 10px),
+    calc(100% - 10px) 100%, 10px 100%,
+    0% calc(100% - 10px), 0% 10px
+  );
 }
 

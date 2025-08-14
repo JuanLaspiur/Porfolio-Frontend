@@ -48,4 +48,10 @@
   border-right: none;
   
   transition: all 0.3s ease-in-out;
+     pointer-events: none; /* No clickeable mientras está oculto */
+     clip-path: polygon(
+    10px 0%, 100% 0%,
+    100% 100%, 10px 100%,
+    0% calc(100% - 10px), 0% 10px
+  );
 }

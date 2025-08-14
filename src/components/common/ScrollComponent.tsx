@@ -10,8 +10,7 @@ export default function ScrollComponent({ showAtPercent = 0.2, children }) {
       const docHeight = document.body.scrollHeight;
 
       const scrollPercent = (scrollTop + windowHeight) / docHeight;
-
-      // Si pasó el porcentaje, opacidad 1, sino 0.3
+      console.log(scrollPercent)
       setOpacity(scrollPercent >= showAtPercent ? 1 : 0.3);
     };
 

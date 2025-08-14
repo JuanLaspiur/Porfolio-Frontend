@@ -1,0 +1,219 @@
+/* HeroScroll.module.css - scoped styles, doesn't touch body/html */
+
+.heroRoot {
+  min-height: 250vh;                 /* same as your original */
+  background: #9e5e094b;
+  font-family: "Circular", system-ui, sans-serif;
+  color: #b3e0ff;
+  position: relative;
+  overflow: visible;
+}
+
+/* centered scroll indicator (fixed) */
+.scrollIndicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 600;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 0.02em;
+  transition: opacity 320ms ease, transform 320ms ease;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* smaller 'scroll' word bold */
+.scrollLight {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translate(-50%, -30%) scale(0.92);
+  pointer-events: none;
+}
+
+/* header: fixed, full-screen initially, shrinks when scrolled */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;                     /* same visual effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 400;
+  background: #b66c0b;
+  transition: height 420ms cubic-bezier(.2,.8,.2,1), background 420ms ease;
+  overflow: visible;
+}
+
+/* header shrunk state */
+.headerShrunk {
+  height: 100px;
+  backdrop-filter: blur(2px);
+}
+
+/* svg logo sizing + transition */
+.logoSvg {
+  width: 600px;
+  height: auto;
+  transition: width 420ms cubic-bezier(.2,.8,.2,1), transform 420ms ease;
+  z-index: 410;
+}
+
+/* smaller logo when scrolled */
+.logoSmall {
+  width: 250px;
+}
+
+/* decorative overlay (gradient + blur), placed inside header */
+.headerOverlay {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  z-index: 390;
+  background: linear-gradient(to bottom, rgba(143, 105, 2, 0.767), transparent 35%);
+  filter: blur(24px);
+  pointer-events: none;
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+/* hide overlay when scrolled (optional) */
+.overlayHidden {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* main content block: positioned relative to viewport (fixed-like behavior in original) */
+.content {
+  position: relative;
+  z-index: 300;
+  width: 100%;
+  padding-top: 24vh; /* give some space below the header on initial view */
+  display: block;
+}
+
+/* inner container constraints */
+.innerContainer {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 6rem;
+  box-sizing: border-box;
+}
+
+/* shape icon */
+.shape1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.shapeIcon {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+/* title and description */
+.titlePrimary {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.desc {
+  max-width: 48rem;
+  margin: 0.25rem auto 1.25rem;
+  text-align: center;
+  color: #cfeeff;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* stats grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.statCard {
+  background: linear-gradient(to bottom, rgba(0,153,255,0.08), transparent 40%);
+  padding: 0.875rem;
+  border-radius: 0.6rem;
+  border-top: 3px solid rgba(0,153,255,0.12);
+  min-height: 88px;
+}
+
+.statLabel {
+  display: block;
+  color: #61c0ff;
+  font-size: 0.9rem;
+}
+
+.statValue {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 1.75rem;
+  color: white;
+}
+
+/* helper: hide some cards on small heights (approx original behaviour) */
+.hideOnSmall {
+  display: none;
+}
+
+/* responsive behaviour */
+@media (min-width: 640px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .hideOnSmall {
+    display: block;
+  }
+}
+
+/* small polish for reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .logoSvg,
+  .headerOverlay,
+  .scrollIndicator {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* logo como imagen */
+.logoImg {
+
+  width: 600px;         /* tamaño grande inicial */
+  height: auto;
+  display: none;
+  transition: width 420ms cubic-bezier(.2,.8,.2,1), transform 420ms ease;
+  z-index: 410;
+  object-fit: contain;
+}
+
+/* tamaño pequeño al hacer scroll */
+.logoSmall {
+    display: block;
+  width: 100px;
+}
+
+/* si quieres centrar un poco más la img dentro del header */
+.header img {
+  display: block;
+  margin: 0 auto;
+}

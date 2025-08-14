@@ -1,0 +1,64 @@
+
+.item{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #bbbbbc;
+}
+
+.item:hover {
+    background-color: #ffffff60;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.container {
+  position: fixed;
+  z-index: 99999999;
+  bottom: 50px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  font-size: var(--fz);
+  background-color: color-mix(in srgb, #bbbbbc 12%, transparent);
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, #fff calc(1 * 10%), transparent),
+    inset 1.8px 3px 0px -2px color-mix(in srgb, #fff calc(1 * 90%), transparent), 
+    inset -2px -2px 0px -2px color-mix(in srgb, #fff calc(1 * 80%), transparent), 
+    inset -3px -8px 1px -6px color-mix(in srgb, #fff calc(1 * 60%), transparent), 
+    inset -0.3px -1px 4px 0px color-mix(in srgb, #000 calc(1 * 12%), transparent), 
+    inset -1.5px 2.5px 0px -2px color-mix(in srgb, #000 calc(1 * 20%), transparent), 
+    inset 0px 3px 4px -2px color-mix(in srgb, #000 calc(1 * 20%), transparent), 
+    inset 2px -6.5px 1px -4px color-mix(in srgb, #000 calc(1 * 10%), transparent), 
+    0px 1px 5px 0px color-mix(in srgb, #000 calc(1 * 10%), transparent), 
+    0px 6px 16px 0px color-mix(in srgb, #000 calc(1 * 8%), transparent);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  padding: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none; /* No clickeable mientras está oculto */
+    pointer-events: none; /* No clickeable mientras está oculto */
+        clip-path: polygon(
+    10px 0%, calc(100% - 10px) 0%,
+    100% 10px, 100% calc(100% - 10px),
+    calc(100% - 10px) 100%, 10px 100%,
+    0% calc(100% - 10px), 0% 10px
+  );
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+

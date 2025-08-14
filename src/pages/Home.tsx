@@ -13,6 +13,8 @@ import ExperienceTimeline from "../components/ExperienceTimeline";
 import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
 import ScrollComponent from "../components/common/ScrollComponent"
+import Navbar from "../components/common/Navbar";
+import ScrolltoTop from "../components/common/ScrolltoTop";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,11 +22,11 @@ function Home() {
 
   return (
     <section className={styles.homeContainer}>
- 
+<Navbar/>
       <div className={`${styles.box} ${styles.box_1}`}>
         <HeroSection />
-      </div> 
-         <ScrollComponent showAtPercent={0.25}>
+      </div>  
+      <ScrollComponent showAtPercent={0.25}>
         <div className={`${styles.box} ${styles.box_2}`}>
           <ProyectCard
             title="Blog María"
@@ -51,14 +53,13 @@ function Home() {
             image="/3.png"
           />
         </div>
-</ScrollComponent>
-
-          <div className={`${styles.box} ${styles.box_4}`}>
-            <SecondarySkill />
-            <SkillSection setHoverSkill={setHoverSkill} />
-            <DevOpsSkill />
-          </div>
-
+      </ScrollComponent> 
+      <ScrollComponent showAtPercent={0.48}>
+        <div className={`${styles.box} ${styles.box_4}`}>
+          <SecondarySkill />
+          <SkillSection setHoverSkill={setHoverSkill} />
+          <DevOpsSkill />
+        </div>
         <FilmCard
           hoverSkill={hoverSkill}
           background="https://iamjoshellis-codepen.s3.amazonaws.com/damon-small.jpg"
@@ -69,16 +70,17 @@ function Home() {
           </span>
         </FilmCard>
 
-      <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} />
-
-        <div className={`${styles.box} ${styles.box_5}`}>
-          <ExperienceTimeline />
-        </div>
-     <CubeBackgroundWrapper>
+        <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} />
+      </ScrollComponent>
+        <ScrollComponent showAtPercent={0.65}>
+      <div className={`${styles.box} ${styles.box_5}`}>
+        <ExperienceTimeline />
+      </div></ScrollComponent>
+      <CubeBackgroundWrapper>
         <AboutMe />
-</CubeBackgroundWrapper>
-        <Footer />
-
+      </CubeBackgroundWrapper>
+      <ScrolltoTop/>
+            <Footer />
     </section>
   );
 }

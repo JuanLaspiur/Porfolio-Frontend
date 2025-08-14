@@ -45,5 +45,11 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
     border-left: none;
   transition: all 0.3s ease-in-out;
+     pointer-events: none; /* No clickeable mientras está oculto */
+  clip-path: polygon(
+    0% 0%, calc(100% - 10px) 0%,
+    100% 10px, 100% calc(100% - 10px),
+    calc(100% - 10px) 100%, 0% 100%
+  );
 
 }

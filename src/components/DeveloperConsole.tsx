@@ -56,7 +56,7 @@ export default function DeveloperConsole({ isOpen, setIsOpen }) {
       deployment: ["SSH", "VPN", "AWS EC2", "S3", "NGINX", "CloudFront"]
     },
     additionalKnowledge: ["Next.js", "Java", "SQL"],
-    passion: "Building scalable web & mobile apps 🚀"
+    passion: "Building scalable web & mobile apps 🚀   //  ¯\_(ツ)_/¯"
   };
 
   return (

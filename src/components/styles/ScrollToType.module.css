@@ -1,0 +1,66 @@
+.wrapper {
+  --cursor-hue: 320;
+  --cursor-saturation: 100;
+  --cursor-lightness: 50;
+  --cursor-blink: 0.8;
+  color-scheme: light dark;
+}
+
+.header {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main section:first-of-type {
+  min-height: 200vh;
+}
+
+.firstSection blockquote {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  opacity: 0.7;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  width: 1ch;
+  height: 1lh;
+  background: hsl(
+    var(--cursor-hue) calc(var(--cursor-saturation) * 1%)
+      calc(var(--cursor-lightness) * 1%)
+  );
+  opacity: var(--alpha, 1);
+}
+
+.fluid {
+  font-size: clamp(1rem, 2vw, 2.2rem);
+  text-transform: uppercase;
+}
+
+.secondSection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  font-size: 0.875rem;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0.5;
+}
