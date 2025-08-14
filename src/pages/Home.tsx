@@ -14,7 +14,7 @@ import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
 import ScrollComponent from "../components/common/ScrollComponent"
 import Navbar from "../components/common/Navbar";
-import ScrolltoTop from "../components/common/ScrolltoTop";
+import WhatsAppButton from "../components/common/ScrolltoTop";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -79,7 +79,7 @@ function Home() {
       <CubeBackgroundWrapper>
         <AboutMe />
       </CubeBackgroundWrapper>
-      <ScrolltoTop/>
+      <WhatsAppButton/>
             <Footer />
     </section>
   );

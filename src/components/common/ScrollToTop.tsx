@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import styles from './styles/ScrollToTop.module.css'
+import styles from './styles/WhatsAppButton.module.css'
 import { FaWhatsapp } from 'react-icons/fa';
 
-function ScrolltoTop() {
+function WhatsAppButton() {
       const [visible, setVisible] = useState(false);
     
       useEffect(() => {
@@ -27,4 +27,4 @@ function ScrolltoTop() {
   )
 }
 
-export default ScrolltoTop
+export default WhatsAppButton
