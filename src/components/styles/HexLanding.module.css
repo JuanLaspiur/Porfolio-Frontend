@@ -1,0 +1,341 @@
+/* Encapsulado: no toca body/html */
+.hexWrapper {
+  width: 100%;
+  box-sizing: border-box;
+    background-color: rgb(226, 221, 221);
+}
+
+/* vertical centrar dentro del componente */
+.hexTable {
+  display: table;
+  width: 100%;
+  height: 20vh;
+}
+
+.hexTableCell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hexContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Title */
+.pageTitle {
+  margin-bottom: 40px;
+}
+
+.heading {
+  display: block;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.subText {
+  font-size: 14px;
+  color: #bdbdbd;
+  margin-top: 12px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hex menu layout */
+.hexMenu {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  padding: 20px 0 60px;
+}
+
+/* Cada hexágono */
+.hexItem {
+  width: 200px;
+  height: 174px;
+  position: relative;
+  transform: rotate(30deg);
+  flex: 0 0 auto;
+
+}
+
+/* decorative lines */
+.hexBorder {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 100px;
+  height: 173.205px;
+  pointer-events: none;
+}
+
+.hexBorder div {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 173.205px;
+  box-sizing: border-box;
+}
+
+
+.hexBorder div:nth-child(1) { transform: rotate(0deg); }
+.hexBorder div:nth-child(2) { transform: rotate(60deg); }
+.hexBorder div:nth-child(3) { transform: rotate(120deg); }
+
+/* Contenido real del hexágono: centrado con flex */
+.hexContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 156px;
+  height: 180px;
+  margin: 0 auto;
+  position: relative;
+  transform: rotate(-30deg);
+  text-decoration: none;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+/* columna centrada y padding interno */
+.hexInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+
+}
+
+/* Icono (React Icon) centrado y con separación al título */
+.hexIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+/* Título del item */
+.hexTitle {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* svg del hexágono posicionado detrás del contenido (relleno) */
+.hexSvg {
+  position: absolute;
+  top: -13px;
+  left: -7px;
+  z-index: 0;
+  transform: scale(0.87);
+  transition: transform 0.25s ease;
+}
+
+/* Outlines (las dos capas que aparecen al hover) */
+.hexOutline {
+  position: absolute;
+  top: -13px;
+  left: -7px;
+  z-index: 3; /* por encima del relleno pero debajo del icono/texto */
+  pointer-events: none;
+  fill: none;
+  stroke: #ff9900;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-origin: 50% 50%;
+  transition: transform 0.28s cubic-bezier(.2,.9,.2,1), opacity 0.22s ease;
+}
+
+/* Outer: más grueso y ligeramente desplazado/inflado */
+.hexOutlineOuter path {
+  stroke-width: 8;
+  stroke-opacity: 1;
+  filter: drop-shadow(0 4px 6px rgba(255,0,55,0.18));
+}
+
+/* Inner: más fino */
+.hexOutlineInner path {
+  stroke-width: 4;
+  stroke-opacity: 1;
+  filter: drop-shadow(0 2px 4px rgba(255,0,55,0.12));
+}
+
+/* Estados iniciales (ocultos / escalados) */
+.hexOutlineOuter {
+  transform: translateY(10px) scale(0.9) rotate(0deg);
+  opacity: 0;
+}
+
+.hexOutlineInner {
+  transform: translateY(6px) scale(0.92) rotate(0deg);
+  opacity: 0;
+}
+
+/* Hover: mostramos y ajustamos posición para crear efecto biselado */
+.hexItem:hover .hexOutlineOuter,
+.hexItem:focus-within .hexOutlineOuter {
+  transform: translate(-6px, -6px) scale(1.04) rotate(-0.5deg);
+  opacity: 1;
+}
+
+.hexItem:hover .hexOutlineInner,
+.hexItem:focus-within .hexOutlineInner {
+  transform: translate(6px, 6px) scale(1.01) rotate(0.5deg);
+  opacity: 1;
+}
+
+/* Hover sobre relleno para intensificar */
+.hexItem:hover .hexSvg {
+  transform: scale(0.92);
+}
+
+/* Cambios sobre icono y título */
+.hexItem:hover .hexIcon {
+  color: #ff9900;
+  transition: color 0.25s ease;
+}
+
+.hexItem:hover .hexTitle {
+  animation: focus-in-contract 0.45s cubic-bezier(0.25,0.46,0.45,0.94) both;
+}
+
+/* pequeña animación de entrada del texto */
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 1em;
+    filter: blur(8px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* responsive */
+@media (max-width: 767px) {
+  .hexMenu { gap: 12px; padding-bottom: 40px; }
+  .hexContent { width: 140px; height: 150px; }
+  .hexIcon { font-size: 24px; margin-bottom: 8px; }
+  .hexTitle { font-size: 12px; }
+}
+
+/* ---- ajustes importantes para que icono+texto estén visibles ---- */
+.hexContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 156px;
+  height: 180px;
+  margin: 0 auto;
+  position: relative;
+  transform: rotate(-30deg);
+  text-decoration: none;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  /* <-- IMPORTANTE: asegurar que el contenido esté por encima de los outlines */
+  z-index: 5;
+}
+
+.hexInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  z-index: 6; /* extra por si acaso */
+}
+
+/* aseguramos que los react-icons svg respeten el color y tengan tamaño */
+.hexIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+/* react-icons son SVGs; forzamos tamaño y color */
+.hexIcon svg {
+  width: 1.2em;
+  height: 1.2em;
+  color: inherit;     /* usa el color del contenedor (white por defecto) */
+  display: block;
+}
+
+/* relleno del hex (detrás) */
+.hexSvg {
+  position: absolute;
+  top: -13px;
+  left: -7px;
+  z-index: 0;
+  transform: scale(0.87);
+  transition: transform 0.25s ease;
+}
+
+/* outlines: deben estar visible pero POR DEBAJO del contenido */
+.hexOutline {
+  position: absolute;
+  top: -13px;
+  left: -7px;
+  z-index: 2;          /* <-- más bajo que .hexContent (5) */
+  pointer-events: none;
+  fill: none;
+  stroke: #ff9900;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-origin: 50% 50%;
+  transition: transform 0.28s cubic-bezier(.2,.9,.2,1), opacity 0.22s ease;
+}
+
+/* Outer/Inner path settings (igual que antes) */
+.hexOutlineOuter path { stroke-width: 8; stroke-opacity: 1; filter: drop-shadow(0 4px 6px rgba(255,0,55,0.18)); }
+.hexOutlineInner path { stroke-width: 4; stroke-opacity: 1; filter: drop-shadow(0 2px 4px rgba(255,0,55,0.12)); }
+
+/* estados iniciales */
+.hexOutlineOuter { transform: translateY(10px) scale(0.9) rotate(0deg); opacity: 0; }
+.hexOutlineInner { transform: translateY(6px) scale(0.92) rotate(0deg); opacity: 0; }
+
+/* hover: muestran outlines (ahora por debajo del contenido) */
+.hexItem:hover .hexOutlineOuter,
+.hexItem:focus-within .hexOutlineOuter {
+  transform: translate(-6px, -6px) scale(1.04) rotate(-0.5deg);
+  opacity: 1;
+}
+.hexItem:hover .hexOutlineInner,
+.hexItem:focus-within .hexOutlineInner {
+  transform: translate(6px, 6px) scale(1.01) rotate(0.5deg);
+  opacity: 1;
+}
+
+/* el resto de tu CSS (hover icono/titulo, responsive, etc.) puede quedarse igual */

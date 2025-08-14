@@ -9,7 +9,6 @@ export default function FilmCard({ background, children, onClick, hoverSkill }) 
     node:nodeImg,
     react: reactImg
   };
-  console.log(hoverSkill)
 
   const finalBackground = hoverSkill ? images[hoverSkill] || background : background;
 

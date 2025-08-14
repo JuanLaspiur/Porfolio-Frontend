@@ -20,8 +20,52 @@
     height: 65vh;
 }
 
-.box_4{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
+.box_4 {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(109, 106, 106);
+}
+
+/* franja blanca en la parte superior (ya la tienes) */
+.box_4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12%;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.178),
+    rgba(255,255,255,0.0) 70%
+  );
+}
+
+/* misma idea, en la parte inferior */
+.box_4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 12%;               /* controla "alto" de la franja inferior */
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.116),  /* color/opacidad en el borde inferior */
+    rgba(255,255,255,0.0) 70%  /* se desvanece hacia arriba */
+  );
+}
+
+/* si el contenido interno debe quedar por encima de las franjas */
+.box_4 > * {
+  position: relative;
+  z-index: 3;
+}
+
