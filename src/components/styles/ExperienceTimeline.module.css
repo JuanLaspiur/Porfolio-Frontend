@@ -9,9 +9,8 @@
   color: #ffa500;
   margin-bottom: 3rem;
 }
-
 .timeline {
-  position: relative;
+  position: relative; /* necesario para ::after */
   margin: auto;
   max-width: 800px;
 }
@@ -19,13 +18,20 @@
 .timeline::after {
   content: '';
   position: absolute;
-  width: 4px;
-  background-color: #ffa500;
   top: 0;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  width: 5px; /* ancho de la "línea" */
+  background-image: url('https://iamjoshellis-codepen.s3.amazonaws.com/damon-small.jpg');
+  background-repeat: repeat-y; /* repite verticalmente */
+  background-size: cover; /* ajusta al ancho */
+  z-index: -1; /* detrás de los items */
+  background-position: center top;
+    filter: blur(1px);
 }
+
+
 
 .timelineItem {
   padding: 1rem;

@@ -14,7 +14,8 @@ import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
 import ScrollComponent from "../components/common/ScrollComponent"
 import Navbar from "../components/common/Navbar";
-import WhatsAppButton from "../components/common/ScrolltoTop";
+import WhatsAppButton from "../components/common/WhatsAppButton";
+import ScrollToTopButton from "../components/common/ScrollToTopButton";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,10 +23,10 @@ function Home() {
 
   return (
     <section className={styles.homeContainer}>
-<Navbar/>
+      <Navbar />
       <div className={`${styles.box} ${styles.box_1}`}>
         <HeroSection />
-      </div>  
+      </div>
       <ScrollComponent showAtPercent={0.25}>
         <div className={`${styles.box} ${styles.box_2}`}>
           <ProyectCard
@@ -53,7 +54,7 @@ function Home() {
             image="/3.png"
           />
         </div>
-      </ScrollComponent> 
+      </ScrollComponent>
       <ScrollComponent showAtPercent={0.48}>
         <div className={`${styles.box} ${styles.box_4}`}>
           <SecondarySkill />
@@ -72,15 +73,16 @@ function Home() {
 
         <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} />
       </ScrollComponent>
-        <ScrollComponent showAtPercent={0.65}>
-      <div className={`${styles.box} ${styles.box_5}`}>
-        <ExperienceTimeline />
-      </div></ScrollComponent>
+      <ScrollComponent showAtPercent={0.65}>
+        <div className={`${styles.box} ${styles.box_5}`}>
+          <ExperienceTimeline />
+        </div></ScrollComponent>
       <CubeBackgroundWrapper>
         <AboutMe />
       </CubeBackgroundWrapper>
-      <WhatsAppButton/>
-            <Footer />
+      <WhatsAppButton />
+      <Footer />
+      <ScrollToTopButton />
     </section>
   );
 }
