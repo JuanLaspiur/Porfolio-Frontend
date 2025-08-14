@@ -1,4 +1,3 @@
-import ScrollSections from "../components/ScrollSections";
 import HeroSection from "../components/HeroSection";
 import ProyectCard from "../components/common/ProyectCard";
 
@@ -13,62 +12,75 @@ import { useState } from "react";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
+import ScrollComponent from "../components/common/ScrollComponent"
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [hoverSkill, setHoverSkill] = useState(null);
+
   return (
     <section className={styles.homeContainer}>
-      <div className={`${styles.box} ${styles.box_1}`}><HeroSection /></div>
-      <div className={`${styles.box} ${styles.box_2}`}>
-        <ProyectCard
-          title="Blog María"
-          category="React - Node"
-          author="Juan Laspiur"
-          time="15 min"
-          href="#"
-          image="/1.png"
-        />
-        <ProyectCard
-          title="Spartus Landing Page"
-          category="React - Java"
-          author="Juan Laspiur"
-          time="15 min"
-          href="#"
-          image="/2.png"
-        />
-        <ProyectCard
-          title="Cooperar Mobile App"
-          category="Expo - Java"
-          author="Juan Laspiur"
-          time="15 min"
-          href="#"
-          image="/3.png"
-        />
-      </div>
-      <div className={`${styles.box} ${styles.box_3}`}>
-
-        <ScrollSections />
-      </div><CubeBackgroundWrapper>
-        <div className={`${styles.box} ${styles.box_4}`}>
-          <SecondarySkill />
-          <SkillSection setHoverSkill={setHoverSkill} />
-          <DevOpsSkill />
+ 
+      <div className={`${styles.box} ${styles.box_1}`}>
+        <HeroSection />
+      </div> 
+         <ScrollComponent showAtPercent={0.25}>
+        <div className={`${styles.box} ${styles.box_2}`}>
+          <ProyectCard
+            title="Blog María"
+            category="React - Node"
+            author="Juan Laspiur"
+            time="15 min"
+            href="#"
+            image="/1.png"
+          />
+          <ProyectCard
+            title="Spartus Landing Page"
+            category="React - Java"
+            author="Juan Laspiur"
+            time="15 min"
+            href="#"
+            image="/2.png"
+          />
+          <ProyectCard
+            title="Cooperar Mobile App"
+            category="Expo - Java"
+            author="Juan Laspiur"
+            time="15 min"
+            href="#"
+            image="/3.png"
+          />
         </div>
-      </CubeBackgroundWrapper>
-      <FilmCard hoverSkill={hoverSkill} background="https://iamjoshellis-codepen.s3.amazonaws.com/damon-small.jpg" onClick={() => setIsOpen(!isOpen)}>
-        <span style={{ textTransform: "uppercase" }}  >{!isOpen ? "Ver más" : "Cerrar Consola"}</span>
-      </FilmCard>
+</ScrollComponent>
+
+          <div className={`${styles.box} ${styles.box_4}`}>
+            <SecondarySkill />
+            <SkillSection setHoverSkill={setHoverSkill} />
+            <DevOpsSkill />
+          </div>
+
+        <FilmCard
+          hoverSkill={hoverSkill}
+          background="https://iamjoshellis-codepen.s3.amazonaws.com/damon-small.jpg"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span style={{ textTransform: "uppercase" }}>
+            {!isOpen ? "Ver más" : "Cerrar Consola"}
+          </span>
+        </FilmCard>
 
       <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className={`${styles.box} ${styles.box_5}`}>
-        <ExperienceTimeline />
-      </div>
-      <AboutMe/>
-      <Footer/>
+
+        <div className={`${styles.box} ${styles.box_5}`}>
+          <ExperienceTimeline />
+        </div>
+     <CubeBackgroundWrapper>
+        <AboutMe />
+</CubeBackgroundWrapper>
+        <Footer />
+
     </section>
   );
 }
-
 
 export default Home;

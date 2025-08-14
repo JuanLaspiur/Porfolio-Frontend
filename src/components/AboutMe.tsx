@@ -1,6 +1,7 @@
 import styles from './styles/AboutMe.module.css';
 import profileImg from '/perfil.jpg'; // Cambia por tu imagen
 import MarkedLabelProps from "../components/common/MarkedLabel"
+import ObjetivosSection from './ObjetivosSection';
 
 export default function AboutMe() {
   return (
@@ -20,8 +21,10 @@ export default function AboutMe() {
             Cuando no estoy programando, me gusta explorar nuevas tecnologías, contribuir a proyectos open source
             y seguir aprendiendo para mantenerme siempre actualizado en este mundo en constante evolución.
           </p>
-        </div>
+        </div>    
+      <ObjetivosSection/>
       </div>
+
     </section>
   );
 }

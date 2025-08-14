@@ -98,3 +98,28 @@
     transform: translateY(0);
   }
 }
+
+.timelineItem {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.6s ease-out;
+}
+
+.timelineItem.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+.timelineItem:nth-child(odd) {
+  transform: translateX(-50px) translateY(40px) scale(0.95);
+}
+.timelineItem:nth-child(odd).visible {
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+.timelineItem:nth-child(even) {
+  transform: translateX(50px) translateY(40px) scale(0.95);
+}
+.timelineItem:nth-child(even).visible {
+  transform: translateX(0) translateY(0) scale(1);
+}

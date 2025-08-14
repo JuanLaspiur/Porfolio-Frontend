@@ -1,0 +1,41 @@
+.container{
+    padding:0 50px ;
+}
+.objetivos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding:5px 20px 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+.texto {
+  max-width: 850px;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+  margin-top: -30px;
+}
+
+.contacto {
+  display: flex;
+  gap: 20px;
+  font-size: 28px;
+}
+
+.contacto a {
+  color: orange;
+  transition: color 0.3s ease;
+}
+
+.contacto a:hover {
+  color: #f3a600;
+}
+
+.containerTitle{
+display: flex;
+align-items: end;
+margin-bottom: 35px;
+}

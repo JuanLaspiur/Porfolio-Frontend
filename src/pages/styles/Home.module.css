@@ -17,10 +17,11 @@
     justify-content: center;
     gap: 25px;
     margin: 10vh 0;
+    height: 65vh;
 }
 
 .box_4{
     display: flex;
     align-items: center;
     justify-content: center;
-     margin: 18vh 0 -5vh 0;}
+    }
