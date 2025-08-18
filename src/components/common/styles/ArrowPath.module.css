@@ -1,0 +1,74 @@
+.graphWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: -82px;
+  left: -500px;
+}
+.absoluteTitle{
+    position: absolute;
+    left: -670px;
+    top: -101px;
+}
+
+.path {
+  stroke: #f3a600; /* naranja */
+  stroke-width: 5;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  fill: none;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 3s linear forwards;
+  animation-delay: 1s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.dashed {
+  stroke: rgba(255, 255, 255, 0.066);
+  stroke-width: 8;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  fill: none;
+  stroke-dasharray: 5, 12;
+}
+
+#arrow {
+  animation: arrow 2s linear forwards;
+  opacity: 0;
+}
+
+@keyframes arrow {
+  to {
+    opacity: 1;
+  }
+}
+
+.childWrapper {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.futuristicText {
+  fill: white;
+  font-family: 'Orbitron', 'Monaco', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #f3a600,
+    0 0 30px #f3a600,
+    0 0 40px #f3a600;
+}

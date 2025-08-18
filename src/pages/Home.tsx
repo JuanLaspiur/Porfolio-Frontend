@@ -16,6 +16,8 @@ import Navbar from "../components/common/Navbar";
 import WhatsAppButton from "../components/common/WhatsAppButton";
 import ScrollToTopButton from "../components/common/ScrollToTopButton";
 import ArrowMore from "../components/common/ArrowMore";
+import ArrowPath from "../components/common/ArrowPath";
+import ProjectLayout from "../components/ProjectLayout";
 
 
 function Home() {
@@ -56,8 +58,10 @@ function Home() {
           />
         </div>
         <div style={{width:'100%', height:'auto', display:'flex', justifyContent:'center', marginBottom:'5vh'}}>
-                     <ArrowMore onClick={()=>console.log('ewrrew')}/>
+                   <ArrowPath> <ArrowMore onClick={()=>console.log('ewrrew')}/>
+         </ArrowPath>           
         </div>
+        <ProjectLayout/>
       </ScrollComponent>
       <ScrollComponent showAtPercent={0.48}>
         <div className={`${styles.box} ${styles.box_4}`}>
