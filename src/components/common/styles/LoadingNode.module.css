@@ -1,0 +1,154 @@
+/* LoadingNode.module.css - scoped (CSS Modules) */
+
+/* wrapper variables controlled inline from component */
+.wrapper {
+  --size: 150px;
+  --stroke: #fff;
+  --dur: 2s;
+  width: var(--size);
+  height: var(--size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--stroke);
+  box-sizing: border-box;
+  pointer-events: none; /* decorative by default */
+  z-index: 9999;
+}
+
+/* modes: fixed centered overlay or inline */
+.fixed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inline {
+  position: relative;
+}
+
+/* svg sizing */
+.svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* group transform (whole shape up/down) */
+.group {
+  transform-origin: 50% 50%;
+  animation: groupTranslate var(--dur) ease-in-out infinite;
+}
+
+/* ensure transforms reference SVG box */
+.leftLine,
+.rightLine,
+.topLine,
+.bottomLine,
+.topBox,
+.botBox,
+.midBox {
+  transform-box: fill-box;
+}
+
+/* left rotates about (21,59) */
+.leftLine {
+  transform-origin: 21px 59px;
+  animation: leftRotate var(--dur) linear infinite;
+}
+
+/* right rotates about (79,59) */
+.rightLine {
+  transform-origin: 79px 59px;
+  animation: rightRotate var(--dur) linear infinite;
+}
+
+/* top moves vertically */
+.topLine {
+  transform-origin: 50px 40px;
+  animation: topMove var(--dur) ease-in-out infinite;
+}
+
+/* bottom moves vertically */
+.bottomLine {
+  transform-origin: 50px 79px;
+  animation: bottomMove var(--dur) ease-in-out infinite;
+}
+
+/* top stroke fades out mid-cycle */
+.topBox {
+  stroke: currentColor;
+  stroke-opacity: 1;
+  animation: topFade var(--dur) linear infinite;
+}
+
+/* mid box static, slightly dim */
+.midBox {
+  stroke: currentColor;
+  stroke-opacity: 0.6;
+}
+
+/* bottom stroke fades in opposite of top */
+.botBox {
+  stroke: currentColor;
+  stroke-opacity: 0;
+  animation: botFade var(--dur) linear infinite;
+}
+
+/* KEYFRAMES */
+@keyframes groupTranslate {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-19px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes leftRotate {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes rightRotate {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(-180deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes topMove {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(19px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes bottomMove {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(19px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes topFade {
+  0%   { stroke-opacity: 1; }
+  50%  { stroke-opacity: 0; }
+  100% { stroke-opacity: 1; }
+}
+
+@keyframes botFade {
+  0%   { stroke-opacity: 0; }
+  50%  { stroke-opacity: 1; }
+  100% { stroke-opacity: 0; }
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .group,
+  .leftLine,
+  .rightLine,
+  .topLine,
+  .bottomLine,
+  .topBox,
+  .botBox {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,291 @@
+/* LoadingBoom.module.css
+   Scoped loader. Does NOT affect body/html.
+   --accent: main accent color (default provided inline from component)
+   --container-width: visual width controlling positions/scale
+*/
+
+.wrapper {
+    position: relative;
+  --accent: #F3A600;
+  --container-width: 800px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--container-width);
+  height: auto;
+  box-sizing: border-box;
+  pointer-events: none; /* decorative */
+  z-index: -1;
+  
+}
+
+/* fixed center overlay or inline container */
+.fixed {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  opacity: 0.025;
+  z-index: -1;
+}
+
+.inline {
+  position: relative;
+}
+
+/* main animation container sized responsively */
+.animationContainer {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: calc(var(--container-width) / 4); /* approximate container height for animations */
+}
+
+/* LIGHTNING */
+.lightningContainer {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.lightning {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  transform-origin: 6px 6px;
+  animation-name: woosh;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+  animation-direction: alternate;
+  box-shadow: 0 50px 50px rgba(0,0,0,0.0);
+}
+
+/* white lightning - uses white */
+.white {
+  background-color: #ffffff;
+  box-shadow: 0px 50px 50px rgba(255,255,255,0.15);
+}
+
+/* red accent lightning is a slightly desaturated accent */
+.red {
+  background-color: #F3A600;
+  box-shadow: 0px 50px 50px rgba(252,113,113,0.15);
+  animation-delay: 0.2s;
+}
+
+/* BOOM groups (explosion shapes) */
+.boomContainer {
+  position: absolute;
+  display: flex;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  align-items: center;
+  transform: translateY(-50%);
+  left: calc(var(--container-width) / 4);
+  top: -145px;
+  pointer-events: none;
+
+}
+
+/* second boom position */
+.boomContainer.second {
+  left: calc(var(--container-width) * 0.6);
+  top: 155px;
+}
+
+/* shared shape styles */
+.shape {
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+  transform-origin: center center;
+}
+
+/* TRIANGLE shapes (CSS triangles using border) */
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transform-origin: 50% 80%;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  margin-left: -15px;
+  border-width: 0 2.5px 5px 2.5px;
+  border-color: transparent transparent #F3A600 transparent;
+  animation-name: boom-triangle;
+}
+
+/* big triangle variant */
+.triangle.big {
+  margin-left: -25px;
+  border-width: 0 5px 10px 5px;
+  border-color: transparent transparent  #F3A600 transparent; /* accent color for big triangle */
+  animation-name: boom-triangle-big;
+}
+
+/* DISC shape */
+.disc {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: rgba(255,255,255,0.95);
+  animation-name: boom-disc;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+/* CIRCLES */
+.circle {
+  width: 20px;
+  height: 20px;
+  animation-name: boom-circle;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  border-radius: 100%;
+  margin-left: -30px;
+  border: 1px solid rgba(255,255,255,0.95);
+}
+
+/* big circle */
+.circle.big {
+  width: 40px;
+  height: 40px;
+  margin-left: 0;
+  border: 2px solid rgba(255,255,255,0.95);
+}
+
+/* color utility classes */
+.yellow { /* main accent for triangles if needed */ }
+.blue { /* keep blue disc/triangle from original design */
+  /* small bluish tone */
+  border-color: #F3A600 !important;
+  color: #F3A600;
+  /* for triangle using border-color we override via next rule */
+}
+.triangle.blue {
+  border-color: transparent transparent #F3A600 transparent;
+}
+.triangle.yellow {
+  border-color: transparent transparent  #F3A600 transparent;
+}
+
+/* animation delays and durations grouping - tuned to original behaviour */
+.shape.triangle,
+.shape.circle,
+.shape.circle.big,
+.shape.disc {
+  animation-delay: 0.38s;
+  animation-duration: 3s;
+}
+.shape.circle { animation-delay: 0.6s; }
+
+/* second group overrides (later explosions) */
+.boomContainer.second .triangle,
+.boomContainer.second .circle,
+.boomContainer.second .circle.big,
+.boomContainer.second .disc {
+  animation-delay: 1.9s;
+}
+.boomContainer.second .circle { animation-delay: 2.15s; }
+
+/* KEYFRAMES */
+
+/* woosh path for lightning dots */
+@keyframes woosh {
+  0% {
+    width: 12px;
+    transform: translate(0px, 0px) rotate(-35deg);
+  }
+  15% {
+    width: 50px;
+  }
+  30% {
+    width: 12px;
+    transform: translate(214px, -150px) rotate(-35deg);
+  }
+  30.1% {
+    transform: translate(214px, -150px) rotate(46deg);
+  }
+  50% {
+    width: 110px;
+  }
+  70% {
+    width: 12px;
+    transform: translate(500px, 150px) rotate(46deg);
+  }
+  70.1% {
+    transform: translate(500px, 150px) rotate(-37deg);
+  }
+  85% {
+    width: 50px;
+  }
+  100% {
+    width: 12px;
+    transform: translate(700px, 0) rotate(-37deg);
+  }
+}
+
+/* boom circle scale + fade */
+@keyframes boom-circle {
+  0% { opacity: 0; transform: scale(1); }
+  5% { opacity: 1; }
+  30% { opacity: 0; transform: scale(3); }
+  100% { opacity: 0; }
+}
+
+/* big triangle */
+@keyframes boom-triangle-big {
+  0% { opacity: 0; transform: scale(1); }
+  5% { opacity: 1; }
+  40% { opacity: 0; transform: scale(2.5) translate(50px, -50px) rotate(360deg); }
+  100% { opacity: 0; }
+}
+
+/* triangle */
+@keyframes boom-triangle {
+  0% { opacity: 0; transform: scale(1); }
+  5% { opacity: 1; }
+  30% { opacity: 0; transform: scale(3) translate(20px, 40px) rotate(360deg); }
+  100% { opacity: 0; }
+}
+
+/* disc popping */
+@keyframes boom-disc {
+  0% { opacity: 0; transform: scale(1); }
+  5% { opacity: 1; }
+  40% { opacity: 0; transform: scale(2) translate(-70px, -30px); }
+  100% { opacity: 0; }
+}
+
+/* circle pop */
+@keyframes boom-circle {
+  0% { opacity: 0; transform: scale(1); }
+  5% { opacity: 1; }
+  30% { opacity: 0; transform: scale(3); }
+  100% { opacity: 0; }
+}
+
+/* group translate to mimic whole composition vertical movement */
+@keyframes group-bob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .lightning, .shape, .boomContainer, .lightningContainer {
+    animation: none !important;
+  }
+}

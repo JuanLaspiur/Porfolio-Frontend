@@ -7,7 +7,6 @@ import CubeBackgroundWrapper from "../components/CubeBackgroundWrapper";
 import DevOpsSkill from "../components/DevOpsSkill";
 import SecondarySkill from "../components/SecondarySkill";
 import DeveloperConsole from "../components/DeveloperConsole";
-import FilmCard from "../components/FilmCard";
 import { useState } from "react";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 import AboutMe from "../components/AboutMe";
@@ -16,6 +15,8 @@ import ScrollComponent from "../components/common/ScrollComponent"
 import Navbar from "../components/common/Navbar";
 import WhatsAppButton from "../components/common/WhatsAppButton";
 import ScrollToTopButton from "../components/common/ScrollToTopButton";
+import ArrowMore from "../components/common/ArrowMore";
+
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +55,9 @@ function Home() {
             image="/3.png"
           />
         </div>
+        <div style={{width:'100%', height:'auto', display:'flex', justifyContent:'center', marginBottom:'5vh'}}>
+                     <ArrowMore onClick={()=>console.log('ewrrew')}/>
+        </div>
       </ScrollComponent>
       <ScrollComponent showAtPercent={0.48}>
         <div className={`${styles.box} ${styles.box_4}`}>
@@ -61,18 +65,13 @@ function Home() {
           <SkillSection setHoverSkill={setHoverSkill} />
           <DevOpsSkill />
         </div>
-        <FilmCard
-          hoverSkill={hoverSkill}
-          background="https://iamjoshellis-codepen.s3.amazonaws.com/damon-small.jpg"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span style={{ textTransform: "uppercase" }}>
-            {!isOpen ? "Ver más" : "Cerrar Consola"}
-          </span>
-        </FilmCard>
+ <div className={`${styles.box_6}`}>
 
-        <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} />
+             <ArrowMore onClick={() => setIsOpen(!isOpen)}/>
+
+        <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} /></div>
       </ScrollComponent>
+
       <ScrollComponent showAtPercent={0.65}>
         <div className={`${styles.box} ${styles.box_5}`}>
           <ExperienceTimeline />
@@ -83,6 +82,7 @@ function Home() {
       <WhatsAppButton />
       <Footer />
       <ScrollToTopButton />
+  
     </section>
   );
 }

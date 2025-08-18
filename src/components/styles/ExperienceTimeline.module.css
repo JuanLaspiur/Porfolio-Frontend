@@ -1,6 +1,8 @@
 .timelineSection {
   padding: 4rem 2rem;
   color: white;
+  position: relative;
+  
 }
 
 .title {

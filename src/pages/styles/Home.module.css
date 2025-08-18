@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     gap: 25px;
-    margin: 10vh 0;
+    margin: 10vh 0 0 0;
     height: 65vh;
 }
 
@@ -27,4 +27,20 @@
   align-items: center;
   justify-content: center;
   background-color:  #51320a4b;
+     clip-path: polygon(
+    20px 0%, calc(100% - 20px) 0%,
+    100% 20px, 100% calc(100% - 20px),
+    calc(100% - 20px) 100%, 20px 100%,
+    0% calc(100% - 20px), 0% 20px
+  );
+  margin: 0 15px;
+}
+
+
+.box_6{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './styles/ExperienceTimeline.module.css';
 import MarkedLabelProps from '../components/common/MarkedLabel';
+import LoadingBoom from './common/LoadingBoom';
 
 export default function ExperienceTimeline() {
   const experiences = [
@@ -69,6 +70,7 @@ export default function ExperienceTimeline() {
           </div>
         ))}
       </div>
+      <LoadingBoom/>
     </section>
   );
 }

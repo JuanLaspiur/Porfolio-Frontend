@@ -5,8 +5,14 @@
   align-items: center;
   overflow: hidden;
   width: 50%;
-  margin: auto;
+  margin: 20px auto;
   margin-bottom: 15px;
+      clip-path: polygon(
+    20px 0%, calc(100% - 20px) 0%,
+    100% 20px, 100% calc(100% - 20px),
+    calc(100% - 20px) 100%, 20px 100%,
+    0% calc(100% - 20px), 0% 20px
+  );
 }
 
 /* Imagen desenfocada detrás */
@@ -21,6 +27,12 @@
   background-attachment: fixed;
   transition: 0.3s ease-out;
   opacity: 0.3;
+      clip-path: polygon(
+    20px 0%, calc(100% - 20px) 0%,
+    100% 20px, 100% calc(100% - 20px),
+    calc(100% - 20px) 100%, 20px 100%,
+    0% calc(100% - 20px), 0% 20px
+  );
 }
 
 

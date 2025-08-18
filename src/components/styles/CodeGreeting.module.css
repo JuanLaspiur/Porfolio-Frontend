@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');
+
+:root {
+  --bg: #282c34;
+  --code: #e4bb68;
+  --white: #ffffff;
+  --out: #e06c75;
+  --println: #61afef;
+  --line-height: 3.2rem; /* controla la altura de cada saludo */
+  --font-size: 1.6rem;
+  --anim-dur: 8s;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  background: var(--bg);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--code);
+  padding: 2rem;
+}
+
+/* la línea de código superior */
+.codeLine {
+  display: inline-flex;
+  gap: 0.35ch;
+  align-items: center;
+  font-size: var(--font-size);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--code);
+}
+
+/* coloreados individuales */
+.white { color: var(--white); }
+.out { color: var(--out); margin: 0 0.1ch; }
+.println { color: var(--println); margin-left: 0.25ch; }
+.quote { color: var(--code); margin-left: 0.25ch; }
+
+/* mascara que muestra solo UNA línea (evita solapamientos) */
+.stringMask {
+  width: max-content;
+  height: var(--line-height);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* lista que se desplaza hacia arriba por pasos */
+.greetingList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transform: translateY(0%);
+  animation: slide var(--anim-dur) linear infinite;
+}
+
+/* cada saludo tiene exactamente la altura de la máscara */
+.greeting {
+  height: var(--line-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--font-size) + 0.2rem);
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* colores por idioma */
+.en { color: #fa8231; }
+.es { color: white; }
+.de { color: #c678dd; }
+.it { color: #a9b0bd; }
+
+/* animación por pasos (4 items) */
+@keyframes slide {
+  0%   { transform: translateY(0%); }
+  20%  { transform: translateY(0%); }
+  25%  { transform: translateY(-100%); }
+  45%  { transform: translateY(-100%); }
+  50%  { transform: translateY(-200%); }
+  70%  { transform: translateY(-200%); }
+  75%  { transform: translateY(-300%); }
+  95%  { transform: translateY(-300%); }
+  100% { transform: translateY(0%); } /* vuelve suave al inicio */
+}
+
+/* cierre */
+.closure {
+  font-size: var(--font-size);
+  color: var(--code);
+  margin-top: 0.6rem;
+}

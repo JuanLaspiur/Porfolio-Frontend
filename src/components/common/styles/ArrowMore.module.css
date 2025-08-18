@@ -1,0 +1,50 @@
+/* styles/ArrowMore.module.css */
+.wrap {
+  display: inline-flex;
+  transform: rotate(90deg); /* 👉 flecha hacia abajo */
+  transform-origin: center;
+}
+
+.button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  gap: 4px;
+  padding: 0;
+    animation: move 4s infinite ease;
+}
+
+.button:hover {
+      background: none;
+  animation: move 2s infinite ease;
+}
+
+@keyframes move {
+  0%   { translate: 0 0; }       /* 👈 usamos translate en vez de transform */
+  50%  { translate: 10px 0px; }
+  100% { translate: 0 0; }
+}
+
+.round {
+  width: 6px;
+  height: 6px;
+  background: orange;
+  border-radius: 50%;
+}
+
+.line {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+/* Escalonado de la flecha */
+.two   { transform: translateX(6px); }
+.three { transform: translateX(12px); }
+.four  { transform: translateX(18px); }
+.five  { transform: translateX(12px); }
+.six   { transform: translateX(6px); }
+.seven { transform: translateX(0px); }

@@ -1,5 +1,5 @@
 import styles from './styles/AboutMe.module.css';
-import profileImg from '/perfil.jpg'; // Cambia por tu imagen
+import profileImg from '/juan.webp'; // Cambia por tu imagen
 import MarkedLabelProps from "../components/common/MarkedLabel"
 import ObjetivosSection from './ObjetivosSection';
 
