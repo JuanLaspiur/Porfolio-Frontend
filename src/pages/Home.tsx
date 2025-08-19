@@ -22,6 +22,7 @@ import ProjectLayout from "../components/ProjectLayout";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProyectsOpen, setIsProyectsOpen] = useState(false)
   const [hoverSkill, setHoverSkill] = useState(null);
 
   return (
@@ -38,7 +39,7 @@ function Home() {
             author="Juan Laspiur"
             time="15 min"
             href="#"
-            image="/1.png"
+            video="/videos/Blog_maria.webm"
           />
           <ProyectCard
             title="Spartus Landing Page"
@@ -46,7 +47,7 @@ function Home() {
             author="Juan Laspiur"
             time="15 min"
             href="#"
-            image="/2.png"
+          video="/videos/spartus_dev.webm"
           />
           <ProyectCard
             title="Cooperar Mobile App"
@@ -54,14 +55,15 @@ function Home() {
             author="Juan Laspiur"
             time="15 min"
             href="#"
-            image="/3.png"
+             video="/videos/trafinktu.webm"
           />
         </div>
-        <div style={{width:'100%', height:'auto', display:'flex', justifyContent:'center', marginBottom:'5vh'}}>
-                   <ArrowPath> <ArrowMore onClick={()=>console.log('ewrrew')}/>
-         </ArrowPath>           
+        <div style={{ width: '100%', height: 'auto', display: 'flex', justifyContent: 'center', marginBottom: '5vh' }}>
+          <ArrowPath> <ArrowMore onClick={() => setIsProyectsOpen(!isProyectsOpen)} />
+          </ArrowPath>
         </div>
-        <ProjectLayout/>
+        {isProyectsOpen && <ProjectLayout  isProjectsOpen={isProyectsOpen}
+  setIsProjectsOpen={setIsProyectsOpen} />}
       </ScrollComponent>
       <ScrollComponent showAtPercent={0.48}>
         <div className={`${styles.box} ${styles.box_4}`}>
@@ -69,11 +71,9 @@ function Home() {
           <SkillSection setHoverSkill={setHoverSkill} />
           <DevOpsSkill />
         </div>
- <div className={`${styles.box_6}`}>
-
-             <ArrowMore onClick={() => setIsOpen(!isOpen)}/>
-
-        <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} /></div>
+        <div className={`${styles.box_6}`}>
+          <ArrowMore onClick={() => setIsOpen(!isOpen)} />
+          <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} /></div>
       </ScrollComponent>
 
       <ScrollComponent showAtPercent={0.65}>
@@ -86,7 +86,7 @@ function Home() {
       <WhatsAppButton />
       <Footer />
       <ScrollToTopButton />
-  
+
     </section>
   );
 }

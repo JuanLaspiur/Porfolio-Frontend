@@ -10,7 +10,7 @@ export default function ArrowPath({ children }: ArrowPathProps) {
   return (
     <div className={styles.graphWrapper}>     
           <div className={styles.absoluteTitle}>
-     <MarkedLabel text="Ver más proyectos" fontSize='1rem'/>    </div>
+     <MarkedLabel text="Ver más" fontSize='1.2rem'/>    </div>
       <div className={styles.absolute}> 
 
         <svg
