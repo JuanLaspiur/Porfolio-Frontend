@@ -11,15 +11,12 @@ import { useState } from "react";
 import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
 import ScrollComponent from "../components/common/ScrollComponent"
-import Navbar from "../components/common/Navbar";
 import WhatsAppButton from "../components/common/WhatsAppButton";
 import ScrollToTopButton from "../components/common/ScrollToTopButton";
 import ArrowMore from "../components/common/ArrowMore";
 import ArrowPath from "../components/common/ArrowPath";
 import ProjectLayout from "../components/ProjectLayout";
-import AnimatedLink from "../components/common/AnimatedLink";
 import ExperienceTimeline from "../components/ExperienceTimeline";
-import MarkedLabel from "../components/common/MarkedLabel";
 
 
 function Home() {
