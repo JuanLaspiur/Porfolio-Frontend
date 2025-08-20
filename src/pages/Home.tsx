@@ -18,6 +18,7 @@ import ArrowMore from "../components/common/ArrowMore";
 import ArrowPath from "../components/common/ArrowPath";
 import ProjectLayout from "../components/ProjectLayout";
 import AnimatedLink from "../components/common/AnimatedLink";
+import ExperienceTimeline from "../components/ExperienceTimeline";
 
 
 function Home() {
@@ -75,13 +76,13 @@ function Home() {
           <ArrowMore onClick={() => setIsOpen(!isOpen)} />
           <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} /></div>
       </ScrollComponent>
-      {/** 
+      
       <ScrollComponent showAtPercent={0.65}>
         <div className={`${styles.box} ${styles.box_5}`}>
           <ExperienceTimeline />
         </div>
       </ScrollComponent>
-   */}
+   *
     <CubeBackgroundWrapper>
         <AboutMe />
       <Footer />

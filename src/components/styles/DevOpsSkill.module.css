@@ -53,3 +53,6 @@
   );
 
 }
+@media (max-width:900px){
+.containerAll {display: none;}
+}

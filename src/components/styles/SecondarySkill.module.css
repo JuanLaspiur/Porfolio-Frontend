@@ -55,3 +55,7 @@
     0% calc(100% - 10px), 0% 10px
   );
 }
+
+@media (max-width:900px){
+.containerAll {display: none;}
+}

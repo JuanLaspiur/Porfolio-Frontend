@@ -16,6 +16,7 @@
   align-items: center;         /* NUEVO: centra verticalmente */
   pointer-events: none;
   z-index: 0;
+   overflow: hidden;
 }
 
 .overlay {
@@ -28,6 +29,7 @@
   -webkit-backdrop-filter: blur(25px);
   z-index: 1;
   pointer-events: none;
+   overflow: hidden;
 }
 
 .content {

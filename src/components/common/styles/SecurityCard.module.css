@@ -17,6 +17,28 @@
   --icon-size: 80px;
     --title-top:-14px
 }
+@media (max-width:1000px){
+  
+.size_sm {
+  --card-size: 77px;
+  --icon-size: 20px;
+    --title-top:10px
+}
+
+.size_md {
+  --card-size: 100px;
+  --icon-size: 24px;
+    --title-top:7px
+}
+
+.size_lg {
+  --card-size: 280px;
+  --icon-size: 80px;
+    --title-top:-14px
+}
+
+}
+
 
 .text {
   position: relative;
