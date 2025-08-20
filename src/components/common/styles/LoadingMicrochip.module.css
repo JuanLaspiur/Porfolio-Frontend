@@ -1,16 +1,13 @@
-/* LoadingMicrochip.module.css - scoped CSS module (do not edit :root globals here) */
-
 :root {
   --font-size-fallback: 16px;
 }
 
 /* wrapper provides local color variables and sizing */
 .wrapper {
-  --hue: 153;
-  --primary1: hsl(var(--hue) 90% 90%);
-  --primary3: hsl(var(--hue) 90% 70%);
-  --primary7: hsl(var(--hue) 90% 30%);
-  --primary9: hsl(var(--hue) 90% 10%);
+  --primary1: #e4af3dff;
+  --primary3: #e4af3dff;
+  --primary7: #e4af3dff;
+  --primary9: #e4af3dff;
   --trans-dur: 0.3s;
   --anim-dur: 5s; /* overridden by inline style from component */
   display: inline-flex;
@@ -18,10 +15,10 @@
   justify-content: center;
   color: var(--primary1);
   box-sizing: border-box;
-      position: absolute;
-    z-index: -1;
-    top: -28px;
-    opacity: 0.5;
+  position: absolute;
+  z-index: -1;
+  top: -28px;
+  opacity: 0.5;
 }
 
 /* svg sizing */
@@ -105,7 +102,7 @@
 .microchip__wave--1 { animation-name: wave-scale1; }
 .microchip__wave--2 { animation-name: wave-scale2; }
 
-/* Keyframes (ported from your SASS) */
+/* Keyframes */
 @keyframes center-scale { from,to { transform: scale(0);} 12.5%,75% { transform: scale(1);} }
 @keyframes dot-scale1 { from,20%,81.25%,to { transform: scale(0);} 32.5%,68.75% { transform: scale(1);} }
 @keyframes dot-scale2 { from,10.5%,87.5%,to { transform: scale(0);} 23%,75% { transform: scale(1);} }

@@ -14,7 +14,7 @@ export default function AboutMe() {
                <MarkedLabelProps fontSize="2rem" text="Sobre Mí" />
           <p className={styles.description}>
             Soy un desarrollador Full Stack apasionado por crear soluciones innovadoras y eficientes.
-            Me especializo en <span>Node.js</span>, <span>React.js</span> y tecnologías de nube como <span>AWS</span>.
+            Me especializo en <span>Node.js</span>, <span>React.js</span> y tecnologías de nube como <span>AWS</span>, <span>Firebase</span>.
             Disfruto resolver problemas complejos, aprender nuevas herramientas y trabajar en proyectos desafiantes.
           </p>
           <p className={styles.description}>

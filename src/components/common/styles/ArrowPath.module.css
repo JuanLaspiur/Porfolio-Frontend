@@ -72,3 +72,9 @@
     0 0 30px #f3a600,
     0 0 40px #f3a600;
 }
+
+@media (max-width:900px){
+  .absolute {
+    display: none;
+  }
+}

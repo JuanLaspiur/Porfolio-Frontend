@@ -10,13 +10,13 @@ export default function Footer() {
       </div>
 
         <div className={styles.social}>
-          <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/JuanLaspiur" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/laspiurperezjuan" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
-          <a href="mailto:tuemail@example.com">
+          <a href="mailto:laspiurperezjuan@gmail.com" target="_blank">
             <FaEnvelope />
           </a>
         </div>

@@ -12,16 +12,16 @@ export default function ExperienceTimeline() {
       description: 'Desarrollo de aplicaciones web con React, Node.js, Docker y AWS.',
     },
     {
-      year: '2022 - 2024',
-      role: 'Backend Developer',
-      company: 'Tech Solutions',
-      description: 'Implementación de microservicios en Node.js y despliegue en AWS.',
+      year: '2023 - 2024',
+      role: 'Desarrollador Full Stack ',
+      company: 'Branack',
+      description: 'Tecnologías: JavaScript, React, Redux, GraphQL (Apollo Client), Material-UI, Node.js, Express, DynamoDB, Sequelize, Mongoose, AWS, Amplify, S3, IAM, Heroku, Cloudinary.',
     },
     {
-      year: '2020 - 2022',
-      role: 'Desarrollador Frontend',
-      company: 'Creativa Web',
-      description: 'Maquetación y desarrollo con React.js, Next.js y consumo de APIs REST.',
+      year: '2022 - 2023',
+      role: 'Desarrollador Full Stack',
+      company: 'EICHE',
+      description: 'Maquetación y desarrollo con React.js, Next.js y consumo de APIs REST. Java y Node.js',
     },
   ];
 

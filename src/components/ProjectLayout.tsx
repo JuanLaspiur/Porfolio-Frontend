@@ -6,9 +6,10 @@ import MarkedLabel from "./common/MarkedLabel";
 interface CardProps {
   title: string;
   image: string;
+  technologies:string;
 }
 
-const Card: React.FC<CardProps> = ({ title, image }) => (
+const Card: React.FC<CardProps> = ({ title, image, technologies }) => (
   <div className={styles.card}>
     <div className={styles.cardImage}>
       <video
@@ -22,7 +23,7 @@ const Card: React.FC<CardProps> = ({ title, image }) => (
     <div className={styles.cardContent}>
       <h4>{title}</h4>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. {/* descripción de ejemplo */}
+        {technologies}
       </p>
     </div>
   </div>
@@ -35,7 +36,7 @@ interface ColProps {
 const Col: React.FC<ColProps> = ({ cards }) => (
   <div className={styles.col}>
     {cards.map((card, index) => (
-      <Card key={index} title={card.title} image={card.image} />
+      <Card key={index} title={card.title} image={card.image} technologies={card.technologies} />
     ))}
   </div>
 );
@@ -49,12 +50,12 @@ interface ProjectLayoutProps {
 const ProjectLayout: React.FC<ProjectLayoutProps> = ({
   columns = [
     [
-      { title: "Astronauts Safely in Orbit Following Launch", image: "/videos/red_social.webm" },
-      { title: "As Solar Wind Blows", image: "/videos/tag_list.webm" },
+      { title: "Red Social", image: "/videos/red_social.webm", technologies:"Java (spring) /React.js /My SQL" },
+      { title: "Gestion Dashboard", image: "/videos/tag_list.webm", technologies:"Node /React.js / Mongo" },
     ],
     [
-            { title: "Raices Inmobiliaria", image: "/videos/raices.mp4" },
-      { title: "Our Heliosphere Balloons", image: "/videos/magic_day.webm" },
+            { title: "Raices Inmobiliaria", image: "/videos/raices.mp4", technologies:"Node.js /React.js /My SQL" },
+      { title: "Red Social", image: "/videos/magic_day.webm", technologies:"Node / Expo /Mongo / Firebase" },
     ],
   ],
   isProjectsOpen,
@@ -91,7 +92,8 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({
      <div className={styles.progress} >
         <MarkedLabel fontSize="1.2rem" text="Otros Proyectos" />
 
-      <ProgressBar progress={progress} /></div>
+      <ProgressBar progress={progress} />
+      </div>
     <div className={styles.container}>
       {columns.map((colCards, index) => (
         <Col key={index} cards={colCards} />

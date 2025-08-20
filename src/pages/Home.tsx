@@ -19,6 +19,7 @@ import ArrowPath from "../components/common/ArrowPath";
 import ProjectLayout from "../components/ProjectLayout";
 import AnimatedLink from "../components/common/AnimatedLink";
 import ExperienceTimeline from "../components/ExperienceTimeline";
+import MarkedLabel from "../components/common/MarkedLabel";
 
 
 function Home() {
@@ -28,7 +29,6 @@ function Home() {
 
   return (
     <section className={styles.homeContainer}>
-      <Navbar />
       <div className={`${styles.box} ${styles.box_1}`}>
         <HeroSection />
       </div>
@@ -82,17 +82,15 @@ function Home() {
           <ExperienceTimeline />
         </div>
       </ScrollComponent>
-   *
+   
     <CubeBackgroundWrapper>
         <AboutMe />
       <Footer />
-       *  </CubeBackgroundWrapper>
+         </CubeBackgroundWrapper>
       <WhatsAppButton />
    
       <ScrollToTopButton />
-      <AnimatedLink 
-        label={`System.out.print("Hola mundo")`}
-      /> 
+     
     </section>
   );
 }
