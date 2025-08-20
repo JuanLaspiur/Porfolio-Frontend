@@ -41,3 +41,11 @@
   flex-direction: column;
 
 }
+
+@media (max-width:900px){
+  
+.box_2{
+  flex-direction: column;
+  height:auto;
+}
+}

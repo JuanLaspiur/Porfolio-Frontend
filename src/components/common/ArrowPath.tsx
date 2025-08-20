@@ -20,11 +20,6 @@ export default function ArrowPath({ children }: ArrowPathProps) {
           style={{ overflow: "visible" }}
         >
           <g fill="none" fillRule="evenodd">
-            {/* Texto inicial */}
-            
-        
-  
-
             {/* Path principal */}
             <path
               id="Path-1"

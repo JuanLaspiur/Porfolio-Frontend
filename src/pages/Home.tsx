@@ -8,7 +8,6 @@ import DevOpsSkill from "../components/DevOpsSkill";
 import SecondarySkill from "../components/SecondarySkill";
 import DeveloperConsole from "../components/DeveloperConsole";
 import { useState } from "react";
-import ExperienceTimeline from "../components/ExperienceTimeline";
 import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
 import ScrollComponent from "../components/common/ScrollComponent"
@@ -18,6 +17,7 @@ import ScrollToTopButton from "../components/common/ScrollToTopButton";
 import ArrowMore from "../components/common/ArrowMore";
 import ArrowPath from "../components/common/ArrowPath";
 import ProjectLayout from "../components/ProjectLayout";
+import AnimatedLink from "../components/common/AnimatedLink";
 
 
 function Home() {
@@ -47,7 +47,7 @@ function Home() {
             author="Juan Laspiur"
             time="15 min"
             href="#"
-          video="/videos/spartus_dev.webm"
+            video="/videos/spartus_dev.webm"
           />
           <ProyectCard
             title="Cooperar Mobile App"
@@ -55,15 +55,15 @@ function Home() {
             author="Juan Laspiur"
             time="15 min"
             href="#"
-             video="/videos/trafinktu.webm"
+            video="/videos/trafinktu.webm"
           />
         </div>
         <div style={{ width: '100%', height: 'auto', display: 'flex', justifyContent: 'center', marginBottom: '5vh' }}>
           <ArrowPath> <ArrowMore onClick={() => setIsProyectsOpen(!isProyectsOpen)} />
           </ArrowPath>
         </div>
-        {isProyectsOpen && <ProjectLayout  isProjectsOpen={isProyectsOpen}
-  setIsProjectsOpen={setIsProyectsOpen} />}
+        {isProyectsOpen && <ProjectLayout isProjectsOpen={isProyectsOpen}
+          setIsProjectsOpen={setIsProyectsOpen} />}
       </ScrollComponent>
       <ScrollComponent showAtPercent={0.48}>
         <div className={`${styles.box} ${styles.box_4}`}>
@@ -75,18 +75,23 @@ function Home() {
           <ArrowMore onClick={() => setIsOpen(!isOpen)} />
           <DeveloperConsole isOpen={isOpen} setIsOpen={setIsOpen} /></div>
       </ScrollComponent>
-
+      {/** 
       <ScrollComponent showAtPercent={0.65}>
         <div className={`${styles.box} ${styles.box_5}`}>
           <ExperienceTimeline />
-        </div></ScrollComponent>
-      <CubeBackgroundWrapper>
+        </div>
+      </ScrollComponent>
+   */}
+    <CubeBackgroundWrapper>
         <AboutMe />
-      </CubeBackgroundWrapper>
-      <WhatsAppButton />
       <Footer />
+       *  </CubeBackgroundWrapper>
+      <WhatsAppButton />
+   
       <ScrollToTopButton />
-
+      <AnimatedLink 
+        label={`System.out.print("Hola mundo")`}
+      /> 
     </section>
   );
 }

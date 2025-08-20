@@ -39,3 +39,12 @@ display: flex;
 align-items: end;
 margin-bottom: 35px;
 }
+
+@media (max-width:900px){
+  .container{
+    padding: 0;
+  }
+  .objetivos{
+    padding: 5px 0px 40px 0px;
+  }
+}

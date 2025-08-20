@@ -49,11 +49,11 @@ interface ProjectLayoutProps {
 const ProjectLayout: React.FC<ProjectLayoutProps> = ({
   columns = [
     [
-      { title: "Astronauts Safely in Orbit Following Launch", image: "/videos/spartus_dev.webm" },
+      { title: "Astronauts Safely in Orbit Following Launch", image: "/videos/red_social.webm" },
       { title: "As Solar Wind Blows", image: "/videos/tag_list.webm" },
     ],
     [
-            { title: "Raices Inmobiliaria", image: "/videos/red_social.webm" },
+            { title: "Raices Inmobiliaria", image: "/videos/raices.mp4" },
       { title: "Our Heliosphere Balloons", image: "/videos/magic_day.webm" },
     ],
   ],

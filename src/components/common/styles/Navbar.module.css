@@ -19,15 +19,17 @@
 .container {
   position: fixed;
   z-index: 99999999;
-  top: 100px;
-  left: 30px;
+  bottom: 50px;
+  left: 0;               /* 👈 */
+  right: 0;              /* 👈 */
+  width: 420px;
+  margin-inline: auto;   /* 👈 centra horizontalmente */
+  
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 8px;
-  width: 70px;
-  max-width: 244px;
-  height: 420px;
+  height: 70px;
   border-radius: 5px;
   font-size: var(--fz);
   background-color: color-mix(in srgb, #bbbbbc 12%, transparent);
@@ -45,11 +47,11 @@
     0px 1px 5px 0px color-mix(in srgb, #000 calc(1 * 10%), transparent), 
     0px 6px 16px 0px color-mix(in srgb, #000 calc(1 * 8%), transparent);
   transition: opacity 1.5s ease, transform 1.5s ease;
-  padding: 20px 5px;
+  padding: 5px 20px;
   opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none; /* No clickeable mientras está oculto */
-        clip-path: polygon(
+  pointer-events: none;
+  transform: translateY(20px); /* solo Y para animar entrada */
+  clip-path: polygon(
     10px 0%, calc(100% - 10px) 0%,
     100% 10px, 100% calc(100% - 10px),
     calc(100% - 10px) 100%, 10px 100%,
@@ -57,9 +59,23 @@
   );
 }
 
+/* estado visible (ejemplo) */
+.container.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+
 .visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
+@media (max-width:840px){
+.container {
+  display: none;
+}
+}
