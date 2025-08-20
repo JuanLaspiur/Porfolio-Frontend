@@ -2,7 +2,6 @@
   padding: 4rem 2rem;
   color: white;
   position: relative;
-  
 }
 
 .title {
@@ -11,8 +10,9 @@
   color: #ffa500;
   margin-bottom: 3rem;
 }
+
 .timeline {
-  position: relative; /* necesario para ::after */
+  position: relative;
   margin: auto;
   max-width: 800px;
 }
@@ -24,29 +24,43 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 5px; /* ancho de la "línea" */
+  width: 5px;
   background-image: url('https://iamjoshellis-codepen.s3.amazonaws.com/damon-small.jpg');
-  background-repeat: repeat-y; /* repite verticalmente */
-  background-size: cover; /* ajusta al ancho */
-  z-index: -1; /* detrás de los items */
+  background-repeat: repeat-y;
+  background-size: cover;
+  z-index: -1;
   background-position: center top;
-    filter: blur(1px);
+  filter: blur(1px);
 }
-
-
 
 .timelineItem {
   padding: 1rem;
   position: relative;
   width: 50%;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.6s ease-out;
+}
+
+.timelineItem.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
 }
 
 .timelineItem:nth-child(odd) {
   left: 0;
+  transform: translateX(-50px) translateY(40px) scale(0.95);
+}
+.timelineItem:nth-child(odd).visible {
+  transform: translateX(0) translateY(0) scale(1);
 }
 
 .timelineItem:nth-child(even) {
   left: 50%;
+  transform: translateX(50px) translateY(40px) scale(0.95);
+}
+.timelineItem:nth-child(even).visible {
+  transform: translateX(0) translateY(0) scale(1);
 }
 
 .content {
@@ -54,21 +68,12 @@
   padding: 1.5rem;
   border-radius: 10px;
   position: relative;
-    /* Esquinas recortadas */
   clip-path: polygon(
     20px 0%, calc(100% - 20px) 0%,
     100% 20px, 100% calc(100% - 20px),
     calc(100% - 20px) 100%, 20px 100%,
     0% calc(100% - 20px), 0% 20px
   );
-}
-
-.timelineItem:nth-child(odd) .content {
-  margin-right: auto;
-}
-
-.timelineItem:nth-child(even) .content {
-  margin-left: auto;
 }
 
 .year {
@@ -93,48 +98,36 @@
   color: #ddd;
 }
 
-/* Animación de aparición */
-.timelineItem {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.timelineItem:nth-child(odd) {
-  animation-delay: 0.2s;
-}
-.timelineItem:nth-child(even) {
-  animation-delay: 0.4s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 10px; /* la línea queda al costado */
+    transform: none;
   }
-}
 
-.timelineItem {
-  opacity: 0;
-  transform: translateY(40px) scale(0.95);
-  transition: all 0.6s ease-out;
-}
+  .timelineItem {
+    width: 100%;
+    left: 0 !important; /* todos alineados */
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    transform: translateY(40px) scale(0.95); /* reset animación */
+  }
 
-.timelineItem.visible {
-  opacity: 1;
-  transform: translateX(0) translateY(0) scale(1);
-}
+  .timelineItem.visible {
+    transform: translateY(0) scale(1);
+  }
 
-.timelineItem:nth-child(odd) {
-  transform: translateX(-50px) translateY(40px) scale(0.95);
-}
-.timelineItem:nth-child(odd).visible {
-  transform: translateX(0) translateY(0) scale(1);
-}
+  .timelineItem:nth-child(odd),
+  .timelineItem:nth-child(even) {
+    transform: translateY(40px) scale(0.95);
+  }
 
-.timelineItem:nth-child(even) {
-  transform: translateX(50px) translateY(40px) scale(0.95);
-}
-.timelineItem:nth-child(even).visible {
-  transform: translateX(0) translateY(0) scale(1);
+  .timelineItem:nth-child(odd).visible,
+  .timelineItem:nth-child(even).visible {
+    transform: translateY(0) scale(1);
+  }
+
+  .content {
+    margin: 0; /* evitar desplazamientos */
+  }
 }
