@@ -13,7 +13,7 @@ export default function BackgroundScrollParallax() {
           <span className={styles.badge}>Full Stack</span>
           <h1>Desarrollo de software</h1>
           <p>Construyendo soluciones digitales con pasión y código.</p>
-          <button>Sobre mi</button>
+          <button>Java / Node.js</button>
         </div>
         <div className={styles.image}>
           <img src='/perfil.jpg' alt="Dynamic" />

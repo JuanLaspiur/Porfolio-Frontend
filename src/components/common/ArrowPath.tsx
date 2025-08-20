@@ -18,7 +18,7 @@ export default function ArrowPath({ children, short = false }: ArrowPathProps) {
   return (
     <div className={styles.graphWrapper}>
       <div className={styles.absoluteTitle}>
-        <MarkedLabel text="Ver más" fontSize="1.2rem" />
+        <MarkedLabel text="Desplegables" fontSize="1.2rem" />
       </div>
 
       <div className={styles.absolute}>
