@@ -11,7 +11,13 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ title, image }) => (
   <div className={styles.card}>
     <div className={styles.cardImage}>
-      <img src={image} alt={title} />
+      <video
+          src={image}
+          muted
+          autoPlay
+          loop
+          playsInline
+        />
     </div>
     <div className={styles.cardContent}>
       <h4>{title}</h4>
@@ -43,14 +49,12 @@ interface ProjectLayoutProps {
 const ProjectLayout: React.FC<ProjectLayoutProps> = ({
   columns = [
     [
-      { title: "Astronauts Safely in Orbit Following Launch", image: "/2.png" },
-      { title: "As Solar Wind Blows", image: "/3.png" },
-      { title: "Raices Inmobiliaria", image: "/4.png" },
+      { title: "Astronauts Safely in Orbit Following Launch", image: "/videos/spartus_dev.webm" },
+      { title: "As Solar Wind Blows", image: "/videos/tag_list.webm" },
     ],
     [
-      { title: "Asteroid Discovered Saturday", image: "/juan.webp" },
-      { title: "Our Heliosphere Balloons", image: "/3.png" },
-      { title: "Tiny Asteroid Disintegrates", image: "/2.png" },
+            { title: "Raices Inmobiliaria", image: "/videos/red_social.webm" },
+      { title: "Our Heliosphere Balloons", image: "/videos/magic_day.webm" },
     ],
   ],
   isProjectsOpen,

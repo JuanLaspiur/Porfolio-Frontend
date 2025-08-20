@@ -2,14 +2,14 @@
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: center; /* 🔥 centra horizontalmente */
+  justify-content: center; 
   gap: 20px;
 }
 
 .col {
   display: flex;
   flex-direction: column;
-  align-items: center; /* 🔥 centra las cards dentro de cada columna */
+  align-items: center; 
   gap: 20px;
 }
 
@@ -32,11 +32,11 @@
 
 .cardImage {
   width: 100%;
-  height: 60%;
+  height: 100%;
   overflow: hidden;
 }
 
-.cardImage img {
+.cardImage video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -51,7 +51,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center; /* 🔥 centra el texto */
+  text-align: center;
 }
 
 .cardContent h4 {
