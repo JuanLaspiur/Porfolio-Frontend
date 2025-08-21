@@ -25,7 +25,7 @@ function WhatsAppButton() {
   return (
     <div className={`${styles.container} ${visible ? styles.visible : ""}`}>
       <div className={styles.item} onClick={handleClick} style={{ cursor: 'pointer' }}>
-        <FaWhatsapp size={25} />
+        <FaWhatsapp size={25} color='green'/>
       </div>
       <LoadingMicrochip/>
     </div>

@@ -45,40 +45,33 @@ interface ProjectLayoutProps {
 }
 
 const ProjectLayout: React.FC<ProjectLayoutProps> = ({
-  columns = [
-    [
-      {
-        title: "Red Social",
-        media: (
-          <video src="/videos/red_social.webm" muted autoPlay loop playsInline />
-        ),
-        technologies: "Java (Spring) / React.js / MySQL",
-      },
-      {
-        title: "Gestión Dashboard",
-        media: (
-          <video src="/videos/tag_list.webm" muted autoPlay loop playsInline />
-        ),
-        technologies: "Node / React.js / Mongo",
-      },
-    ],
-    [
-      {
-        title: "Raíces Inmobiliaria",
-        media: (
-          <video src="/videos/raices.mp4" muted autoPlay loop playsInline />
-        ),
-        technologies: "Node.js / React.js / MySQL",
-      },
-      {
-        title: "Magic Day",
-        media: (
-          <video src="/videos/magic_day.webm" muted autoPlay loop playsInline />
-        ),
-        technologies: "Node / Expo / Mongo / Firebase",
-      },
-    ],
+ columns = [
+  [
+    {
+      title: "Red Social",
+      media: <Media videoSrc="/videos/red_social.webm" preview="/optimizado/redSocial.webp" />,
+      technologies: "Java (Spring) / React.js / MySQL",
+    },
+    {
+      title: "Gestión Dashboard",
+      media: <Media videoSrc="/videos/tag_list.webm" preview="/optimizado/tagList.webp" />,
+      technologies: "Node / React.js / Mongo",
+    },
   ],
+  [
+    {
+      title: "Raíces Inmobiliaria",
+      media: <Media videoSrc="/videos/raices.mp4" preview="/optimizado/raices.webp" />,
+      technologies: "Node.js / React.js / MySQL",
+    },
+    {
+      title: "Magic Day",
+      media: <Media videoSrc="/videos/magic_day.webm" preview="/optimizado/magic.webp" />,
+      technologies: "Node / Expo / Mongo / Firebase",
+    },
+  ],
+]
+,
   isProjectsOpen,
   setIsProjectsOpen,
 }) => {
@@ -124,3 +117,26 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({
 };
 
 export default ProjectLayout;
+
+
+interface MediaProps {
+  videoSrc: string;
+  preview: string;
+}
+
+const Media: React.FC<MediaProps> = ({ videoSrc, preview }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <video
+      src={videoSrc}
+      muted
+      autoPlay
+      loop
+      playsInline
+      poster={preview}      // 👈 muestra la imagen mientras carga
+      onCanPlayThrough={() => setLoaded(true)} 
+      style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+    />
+  );
+};
