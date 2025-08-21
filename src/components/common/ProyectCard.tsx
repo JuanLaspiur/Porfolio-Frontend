@@ -4,10 +4,12 @@ export interface Proyect {
   author: string;
   time: string;
   href: string;
-  video: string; // 👈 ahora video en lugar de image
+  video: string;
+  preview:string; // 👈 ahora video en lugar de image
 }
 
 
+import Media from './Media';
 import styles from './styles/ProyectCard.module.css';
 
 function ProyectCard({
@@ -16,7 +18,8 @@ function ProyectCard({
   author,
   time,
   href,
-  video
+  video, 
+  preview
 }: Proyect) {
   return (
     <article className={`${styles.card} ${styles.card1}`}>
@@ -31,14 +34,7 @@ function ProyectCard({
 
       {/* 🎬 Video principal */}
       <div className={styles.card__videoWrapper}>
-        <video
-          className={styles.card__video}
-          src={video}
-          muted
-          autoPlay
-          loop
-          playsInline
-        />
+        <Media videoSrc={video} preview={preview}  className={styles.card__video}    />
       </div>
 
       <a href={href} className={styles.card_link}></a>

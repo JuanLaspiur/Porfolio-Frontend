@@ -38,6 +38,7 @@ function Home() {
             time="15 min"
             href="#"
             video="/videos/Blog_maria.webm"
+            preview="/optimizado/blogMaría.webp"
           />
           <ProyectCard
             title="Spartus Landing Page"
@@ -46,6 +47,7 @@ function Home() {
             time="15 min"
             href="#"
             video="/videos/spartus_dev.webm"
+            preview="/optimizado/spartus.webp"
           />
           <ProyectCard
             title="Cooperar Mobile App"
@@ -54,6 +56,7 @@ function Home() {
             time="15 min"
             href="#"
             video="/videos/trafinktu.webm"
+            preview="/optimizado/cooperar.webp"
           />
         </div>
         <div style={{ width: '100%', height: 'auto', display: 'flex', justifyContent: 'center', marginBottom: '5vh' }}>

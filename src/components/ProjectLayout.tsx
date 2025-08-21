@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./styles/ProjectLayout.module.css";
 import ProgressBar from "./common/ProgressBar";
 import MarkedLabel from "./common/MarkedLabel";
+import Media from "./common/Media";
 
 interface CardProps {
   title: string;
@@ -119,24 +120,3 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({
 export default ProjectLayout;
 
 
-interface MediaProps {
-  videoSrc: string;
-  preview: string;
-}
-
-const Media: React.FC<MediaProps> = ({ videoSrc, preview }) => {
-  const [loaded, setLoaded] = useState(false);
-
-  return (
-    <video
-      src={videoSrc}
-      muted
-      autoPlay
-      loop
-      playsInline
-      poster={preview}      // 👈 muestra la imagen mientras carga
-      onCanPlayThrough={() => setLoaded(true)} 
-      style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
-    />
-  );
-};
