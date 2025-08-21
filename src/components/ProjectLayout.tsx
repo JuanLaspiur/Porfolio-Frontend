@@ -91,7 +91,7 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({
     }
 
     let startTime = Date.now();
-    const duration = 10000;
+    const duration = 15000;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
