@@ -12,11 +12,10 @@ export default function ObjetivosSection() {
     <section className={styles.objetivos}>
       
       <div className={styles.texto}>
-        <p>
-          Mi objetivo es seguir desarrollándome como profesional en el ámbito del
-          desarrollo de software, mejorar a nivel de arquitectura, buenas prácticas, funcionamiento interno del lenguaje, optimización de procesos. 
-          Actualmente estoy realizando "Curso de Programación en Javascript y Typescript. Nivel avanzado" en la UTN, tengo como objetivo seguir aprendiendo en esa institución.
-        </p>
+ <p>
+Mi objetivo es seguir desarrollándome como profesional en el ámbito del desarrollo de software, mejorar en arquitectura, buenas prácticas, funcionamiento interno del lenguaje y optimización de procesos. Actualmente estoy realizando el Curso de Programación en JavaScript y TypeScript, nivel avanzado, en la UTN, y mi objetivo es continuar aprendiendo en esta institución.
+</p>
+
       </div>
 
       <div className={styles.contacto}>
