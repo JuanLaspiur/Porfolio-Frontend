@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './styles/WhatsAppButton.module.css';
 import { FaWhatsapp } from 'react-icons/fa';
-import LoadingMicrochip from './LoadingMicrochip';
 
 function WhatsAppButton() {
   const [visible, setVisible] = useState(false);
@@ -27,7 +26,6 @@ function WhatsAppButton() {
       <div className={styles.item} onClick={handleClick} style={{ cursor: 'pointer' }}>
         <FaWhatsapp size={25} color='green'/>
       </div>
-      <LoadingMicrochip/>
     </div>
   );
 }

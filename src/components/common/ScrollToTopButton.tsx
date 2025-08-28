@@ -6,16 +6,23 @@ function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      if (scrollPercent >= 0.121) {
-        setVisible(true);
-      } else {
-        setVisible(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPercent =
+            window.scrollY /
+            (document.body.scrollHeight - window.innerHeight);
+
+          setVisible(scrollPercent >= 0.12);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -24,12 +31,14 @@ function ScrollToTopButton() {
   };
 
   return (
-    <div 
+    <button
+      aria-label="Scroll to top"
       className={`${styles.container} ${visible ? styles.visible : ""}`}
       onClick={scrollToTop}
+      onKeyDown={(e) => (e.key === "Enter" || e.key === " " ? scrollToTop() : null)}
     >
-      <div className={styles.item}><FaArrowUp size={20} /></div>
-    </div>
+      <FaArrowUp size={22} />
+    </button>
   );
 }
 
