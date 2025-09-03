@@ -25,7 +25,7 @@ const Media: React.FC<MediaProps> = ({ videoSrc, preview }) => {
         poster={preview} // ayuda a mostrar la preview hasta que el video cargue
         controls
         preload="metadata" // carga solo lo mínimo para empezar
-        autoPlay={false}
+        autoPlay={true}
         muted
         onCanPlay={() => setIsLoaded(true)} // marca que el video ya se puede reproducir
         style={{
