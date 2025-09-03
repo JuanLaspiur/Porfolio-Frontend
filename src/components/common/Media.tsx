@@ -3,27 +3,39 @@ import { useState } from "react";
 interface MediaProps {
   videoSrc: string;
   preview: string;
-  className?: string; // 👈 opcional
 }
 
-const Media: React.FC<MediaProps> = ({ videoSrc, preview, className }) => {
-  const [loaded, setLoaded] = useState(false);
+const Media: React.FC<MediaProps> = ({ videoSrc, preview }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <video
-      src={videoSrc}
-      muted
-      autoPlay
-      loop
-      playsInline
-      poster={preview}
-      onCanPlayThrough={() => setLoaded(true)}
-      className={className}
-      style={{
-        opacity: loaded ? 1 : 0,
-        transition: "opacity 0.4s ease",
-      }}
-    />
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      {/* Imagen de preview */}
+      {!isLoaded && (
+        <img
+          src={preview}
+          alt="Preview"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      )}
+
+      {/* Video */}
+      <video
+        src={videoSrc}
+        poster={preview} // ayuda a mostrar la preview hasta que el video cargue
+        controls
+        preload="metadata" // carga solo lo mínimo para empezar
+        autoPlay={false}
+        muted
+        onCanPlay={() => setIsLoaded(true)} // marca que el video ya se puede reproducir
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          display: isLoaded ? "block" : "none",
+        }}
+      />
+    </div>
   );
 };
 
