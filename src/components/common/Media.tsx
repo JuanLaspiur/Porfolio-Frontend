@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 interface MediaProps {
   videoSrc: string;
@@ -7,18 +6,9 @@ interface MediaProps {
 }
 
 const Media: React.FC<MediaProps> = ({ videoSrc, preview }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-      {/* Imagen de preview */}
-      {!isLoaded && (
-        <img
-          src={preview}
-          alt="Preview"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      )}
-
+   
       {/* Video */}
       <video
         src={videoSrc}
@@ -27,12 +17,10 @@ const Media: React.FC<MediaProps> = ({ videoSrc, preview }) => {
         preload="metadata" // carga solo lo mínimo para empezar
         autoPlay={true}
         muted
-        onCanPlay={() => setIsLoaded(true)} // marca que el video ya se puede reproducir
         style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          display: isLoaded ? "block" : "none",
         }}
       />
     </div>
