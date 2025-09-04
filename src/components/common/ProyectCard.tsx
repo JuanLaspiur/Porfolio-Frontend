@@ -34,7 +34,7 @@ function ProyectCard({
 
       {/* 🎬 Video principal */}
       <div className={styles.card__videoWrapper}>
-        <Media videoSrc={video} preview={preview}  className={styles.card__video}    />
+        <Media videoSrc={video} preview={preview}  autoPlay={true}   />
       </div>
 
       <a href={href} className={styles.card_link}></a>
