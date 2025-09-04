@@ -6,15 +6,13 @@ interface MediaProps {
 }
 
 const Media: React.FC<MediaProps> = ({ videoSrc, preview }) => {
+  // La imagen de Preview no se ve.. esta en public
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-   
-      {/* Video */}
       <video
         src={videoSrc}
         poster={preview} // ayuda a mostrar la preview hasta que el video cargue
-        controls
-        preload="metadata" // carga solo lo mínimo para empezar
+        preload="auto" // carga solo lo mínimo para empezar
         autoPlay={true}
         muted
         style={{
