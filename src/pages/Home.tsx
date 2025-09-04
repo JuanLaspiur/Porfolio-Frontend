@@ -63,8 +63,8 @@ function Home() {
           <ArrowPath> <ArrowMore onClick={() => setIsProyectsOpen(!isProyectsOpen)} />
           </ArrowPath>
         </div>
-        {isProyectsOpen && <ProjectLayout isProjectsOpen={isProyectsOpen}
-          setIsProjectsOpen={setIsProyectsOpen} />}
+   <ProjectLayout isProjectsOpen={isProyectsOpen}
+          setIsProjectsOpen={setIsProyectsOpen} />
       </ScrollComponent>
       <ScrollComponent showAtPercent={0.48}>
         <div className={`${styles.box} ${styles.box_4}`}>
