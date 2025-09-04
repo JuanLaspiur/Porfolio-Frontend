@@ -3,11 +3,11 @@ import { useState } from "react";
 interface MediaProps {
   videoSrc: string;
   preview: string;
+
 }
 
 const Media: React.FC<MediaProps> = ({ videoSrc, preview }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       {/* Imagen de preview */}
